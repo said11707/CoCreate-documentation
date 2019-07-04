@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin UI</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+
+<!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<!-- Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	
+<!-- Select2 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6/js/select2.min.js"></script>
+ 
+<!-- SortableJS -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+<!-- DHTMLX Window -->
+  <link rel="stylesheet" href="https://cdn.dhtmlx.com/edge/dhtmlx.css" type="text/css"> 
+  <script src="https://cdn.dhtmlx.com/edge/dhtmlx.js" type="text/javascript"></script></head>
+  
+<!-- Floating Labels -->
+  <link rel="stylesheet" type="text/css" href="float-labels.js/float-labels.css">
+  <script src="float-labels.js/float-labels.min.js"></script>
+
+<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/99ba925095.js"></script> 
+
+<!-- Simple Line Icon -->	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+
+<!-- Admin UI -->    
+  <link href="assets/css/adminUI-vertical.css" rel="stylesheet">
+  <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+	<link href="assets/hamburgers/hamburgers.css" rel="stylesheet">
+
+	
+	<script src="assets/js/adminUI.js"></script>
+	<script src="assets/js/custom-adminUI.js"></script> 	 
+
+	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script> 
+	<script src="assets/js/jquery.mousewheel.min.js"></script> 
+
+<script src="https://cdn.rawgit.com/icons8/titanic/master/dist/js/titanic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.5.9/bodymovin.min.js"></script>
+
+<style type="text/css" media="screen">
+	
+	::-webkit-scrollbar{
+		display: none;
+	}
+
+/*
+[1]: All items a forced onto a single line, causing the overflow when necessary.
+[2]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
+[3]: Make it smooth scrolling on iOS devices
+[4]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
+[5]: Hide the scroll bar in WebKit browsers
+*/
+.horizontal-scroll {
+  white-space: nowrap; /* [1] */
+  overflow-x: auto; /* [2] */
+  direction: rtl;
+  -webkit-overflow-scrolling: touch; /* [3] */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */ }
+
+/* [5] */
+.horizontal-scroll::-webkit-scrollbar {
+  display: none; }
+
+.nav-item {
+  padding: 10px 16px 0px 10px;
+  font-size: 20px!important;
+  vertical-align: middle;
+}
+
+.nav-item a{
+    text-decoration: none;
+}
+</style>
+
+		<style>
+				#customVPhere {
+            		position: relative;
+            		height: 100vh;
+            		width:100%;
+        		}
+		</style>
+		
+	</head>
+	<body  onload="doOnLoad();" onunload="doOnUnload();">
+		<div id="adminUI" class="adminUI">
+			<div class="adminUI-overlay-box"></div>
+			<div class="adminUI-container">  
+				<header class="adminUI-header">
+					<div class="adminUI-wrapper"> 
+						<div class="adminUI-left-header"> 
+							<div class="adminUI-logo"> 
+								<a href="#"><span class="logo-icon"><img id="icon_profile" src="assets/images/cocreate.png" width="35px" class="img img-responsive" /></span>
+								<span class="logo-text">CoCreate<span class="hide-in-smallsize"></span></span></a>
+							</div> 
+						</div>
+						<div class="adminUI-right-header"> 
+							<div class="sidebar_toggle">
+									<a href="javascript:void(0)">
+										<div class="hamburger hamburger--spin">
+    									<div class="hamburger-box">
+      									<div class="hamburger-inner"></div>
+    									</div>
+										</div>
+									</a>
+							</div> 
+							<div class="adminUI-rl-header"> 
+								
+							</div>
+
+							
+							<div class="adminUI-rr-header" >
+								<ul>
+									
+									<!--<li class="icons">
+										<a href="javascript:void(0)" class="fs-page-button"><i class="titanic titanic-expand"></i>
+										</a>
+									</li>
+									<li class="icons">
+										<a href="javascript:void(0)" class="fs-page-button"><i class="fas fa-expand"></i>
+										</a>
+									</li>-->
+									<li class="icons">
+										<a href="javascript:void(0)"><i class="fas fa-history"></i>
+											<span class="adminUI-badge badge-danger">8</span>
+										</a>
+									</li>
+									<li class="">
+                						<a data-window_url="calendar.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#008B8B"><i> <img id="icon_profile" src="http://pronksiapartments.ee/wp-content/uploads/2015/10/placeholder-face-big.png" height="40px" width="40px" class="img img-responsive" /></i>
+                						</a>
+									</li>
+								</ul>
+							</div>
+							<div class="horizontal-scroll">
+							    <span class="nav-item">
+									<a class="fs-page-button"><i class="fas fa-expand"></i>
+									</a>
+								</span>
+						    	<span class="nav-item">
+									<a data-window_url="calendar.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#008B8B"><i class="fas fa-history"></i>
+									</a>
+								</span>							     
+							    <span class="nav-item">
+								    <a data-window_url="calendar.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#008B8B"><i class="fa fa-calendar" aria-hidden="true"></i>
+									 </a>
+								</span>
+						    	<span class="nav-item">
+						      		<a data-window_url="datatables.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#333"><i class="fas fa-table" aria-hidden="true"></i>
+								 	</a>
+						      	</span>
+						      	<span class="nav-item">
+						      		<a data-window_url='builder.html' data-pass_collection='modules' data-pass_module_id='5cf995e8ac959a2bd93356fb' data-pass_prefix="form_" data-pass_to="me1234"><i class="fas fa-code" aria-hidden="true"></i>
+									</a>
+						      	</span>
+							  	<span class="nav-item">
+							      	<a data-window_url="datatables.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#333"><i class="fa fa-cubes" aria-hidden="true"></i>
+								 	 </a>
+								</span>							      
+								<span class="nav-item">
+								    <a data-window_url="datatables.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#333"><i class="fa fa-money-bill" aria-hidden="true"></i>			
+									</a>
+								</span>							      
+								<span class="nav-item">
+								    <a data-window_url="datatables.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#333"><i class="fa fa-comment" aria-hidden="true"></i>			
+									</a>
+								</span>							      
+							    <span class="nav-item">
+									<a data-window_url="datatables.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#333"><i class="fa fa-envelope" aria-hidden="true"></i>
+									</a>
+							    </span>
+							    <span class="nav-item">
+									<a data-window_url="datatables.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#333"><i class="fa fa-share-alt" aria-hidden="true"></i>
+									</a>
+							    </span>
+							    <span class="nav-item">
+									<a data-window_url="datatables.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#333"><i class="fas fa-wallet" aria-hidden="true"></i>
+									</a>
+							    </span>
+							</div>							
+
+							
+						</div>
+					</div>
+				</header>
+				<div class="adminUI-main-container">
+					<div class="adminUI-wrapper">
+						<nav class="adminUI-navbar">  
+							<div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+							<div class="adminUI-inner-navbar" style="overflow-y: auto; overflow-x: hidden;"> 
+								<div class="adminUI-search"> 
+									<span class="searchbar-toggle">  </span>
+									<div class="adminUI-search-box "> 
+										<input type="text" placeholder="Search">
+										<span class="search-icon"><i class="fas fa-search" aria-hidden="true"></i></span>
+									</div> 
+								</div>
+								 <ul class="adminUI-item adminUI-brand">
+									<li class="active">
+										<a data-window_url="calendar.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#008B8B">
+											<span class="adminUI-menu_icon"><i class="fas fa-tachometer-alt"></i></span>
+											<span class="adminUI-menu_text">DashBoard</span>
+											<span class="adminUI-menu_caret"></span>
+										</a>
+									</li>
+									<li class=" ">
+										<a data-window_url="calendar.html" data-pass_collection="modules" data-pass_module_id="5cc0efdb1c5c581c14a0fcaf" data-pass_to="me1234" data-window_ajax="false" data-window_width="600px" data-window_height="100%" data-window_color="#008B8B">
+											<span class="adminUI-menu_icon"><i class="fas fa-address-book"></i></span>
+											<span class="adminUI-menu_text">Contacts</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="fas fa-store"></i></span>
+											<span class="adminUI-menu_text">Companies</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="fas fa-balance-scale"></i></span>
+											<span class="adminUI-menu_text">Potentials</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="fas fa-file-invoice"></i></i></span>
+											<span class="adminUI-menu_text">Estimates</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="fas fa-file-invoice-dollar"></i></i></span>
+											<span class="adminUI-menu_text">Invoices</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="far fa-plus-square"></i></span>
+											<span class="adminUI-menu_text">Payments</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="far fa-minus-square"></i></span>
+											<span class="adminUI-menu_text">Expenses</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="fas fa-boxes"></i></span>
+											<span class="adminUI-menu_text">Items</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+									<li class=" ">
+										<a href="javascript:void(0)">
+											<span class="adminUI-menu_icon"><i class="fas fa-blog"></i></span>
+											<span class="adminUI-menu_text">Blog</span>
+											<span class="adminUI-menu_caret"></span>
+										</a> 
+									</li> 
+
+								</ul>  
+							</div> 
+						</nav> 
+						<div class="adminUI-content">
+							<div style="position: relative;" id="customVPhere"></div>
+							<!--<div class="adminUI-inner-content">-->
+								<div id="styleSelector" class="open">
+									<div class="selector-toggle">
+										<a href="javascript:void(0)"></a>
+									</div> 
+									<ul>
+										<li>
+											<p class="selector-title">Style Selector</p>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Left Header Theme</span>
+											<div class="theme-color">
+												<a href="#" class="leftheader-theme" lheader-theme="theme1">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme2">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme3">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme4">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme5">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme6">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme7">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme8">&nbsp;</a>
+												<a href="#" class="leftheader-theme" lheader-theme="theme9">&nbsp;</a> 
+											</div>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Header Theme</span>
+											<div class="theme-color">
+												<a href="#" class="header-theme" header-theme="theme1">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme2">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme3">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme4">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme5">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme6">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme7">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme8">&nbsp;</a>
+												<a href="#" class="header-theme" header-theme="theme9">&nbsp;</a> 
+											</div>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">left NavBar Theme</span>
+											<div class="theme-color">
+												<a href="#" class="navbar-theme" navbar-theme="theme1">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme2">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme3">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme4">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme5">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme6">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme7">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme8">&nbsp;</a>
+												<a href="#" class="navbar-theme" navbar-theme="theme9">&nbsp;</a> 
+											</div>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Active item Theme</span>
+											<div class="theme-color">
+												<a href="#" class="active-item-theme" active-item-theme="theme1">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme2">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme3">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme4">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme5">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme6">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme7">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme8">&nbsp;</a>
+												<a href="#" class="active-item-theme" active-item-theme="theme9">&nbsp;</a>
+											</div>
+										</li>   
+										<li class="theme-option">
+											<span class="sub-title">Background Patterns</span>
+											<div class="theme-color">
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern1">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern2">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern3">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern4">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern5">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern6">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern7">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern8">&nbsp;</a>
+												<a href="#" class="themebg-pattern" themebg-pattern="pattern9">&nbsp;</a>
+											</div>
+										</li>
+										
+										<li class="theme-option">
+											<span class="sub-title">Sidebar Position</span> 
+											<div class="slideOne">	
+												<input type="checkbox" value="false" id="sidebar-position" name="sidebar-position"> 
+												<label for="slideOne">Fixed Sidebar Position</label>
+											</div> 
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Header Position</span> 
+											<div class="slideOne">	
+												<input type="checkbox" value="false" id="header-position" name="header-position"> 
+												<label for="slideOne">Fixed Header Position</label>
+											</div> 
+										</li>
+										
+										<li class="theme-option">
+											<span class="sub-title">Item Border</span> 
+											<div class="slideOne">	
+												<input type="checkbox" value="false" id="vertical-item-border" name="vertical-item-border"> 
+												<label for="slideOne">Hide Item Border</label>
+											</div>
+											
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">SubItem Border</span> 
+											<div class="slideOne">	
+												<input type="checkbox" value="false" id="vertical-subitem-border" name="vertical-item-border"> 
+												<label for="slideOne">Hide SubItem Border</label>
+											</div> 
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Navbar Placement</span>
+											<select id="vertical-navbar-placement" class="form-control minimal input-sm">
+												<option name="navigation-side" value="left">Left</option>
+												<option name="navigation-side" value="right">Right</option>
+											</select>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Vertical Navigation View</span>
+											<select id="navigation-view" class="form-control minimal input-sm">
+												<option name="navigation-view" value="view1">View 1</option>
+												<option name="navigation-view" value="view2">View 2</option>
+												<option name="navigation-view" value="view3">View 3</option> 
+											</select>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Theme vertical Layout</span>
+											<select id="theme-layout" class="form-control minimal input-sm">
+												<option name="vertical-layout" value="wide">Wide layout</option>
+												<option name="vertical-layout" value="box">Boxed layout</option>
+												<option name="vertical-layout" value="widebox">widebox layout</option> 
+											</select>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">SideBar Effect</span>
+											<select id="vertical-menu-effect" class="form-control minimal input-sm">
+												<option name="vertical-menu-effect" value="shrink">shrink</option>
+												<option name="vertical-menu-effect" value="overlay">overlay</option>
+												<option name="vertical-menu-effect" value="push">Push</option>
+											</select>
+										</li>   
+										<li class="theme-option">
+											<span class="sub-title">Border Style</span>
+											<select id="vertical-border-style" class="form-control minimal input-sm">
+												<option name="vertical-border-style" value="solid">Style 1</option>
+												<option name="vertical-border-style" value="dotted">style 2</option>
+												<option name="vertical-border-style" value="dashed">style 3</option> 
+											</select>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">DropDown Icon</span>
+											<select id="vertical-dropdown-icon" class="form-control minimal input-sm">
+												<option name="vertical-dropdown-icon" value="style1">Style 1</option>
+												<option name="vertical-dropdown-icon" value="style2">style 2</option>
+												<option name="vertical-dropdown-icon" value="style3">style 3</option> 
+											</select>
+										</li>
+										<li class="theme-option">
+											<span class="sub-title">Submenu Item Icon</span>
+											<select id="vertical-subitem-icon" class="form-control minimal input-sm">
+												<option name="vertical-subitem-icon" value="style1">Style 1</option>
+												<option name="vertical-subitem-icon" value="style2">style 2</option>
+												<option name="vertical-subitem-icon" value="style3">style 3</option>
+												<option name="vertical-subitem-icon" value="style4">style 4</option> 
+												<option name="vertical-subitem-icon" value="style5">style 5</option> 
+												<option name="vertical-subitem-icon" value="style6">style 6</option> 
+											</select>
+										</li>
+									</ul>
+								</div>
+
+							<!--</div>-->
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+		
+	        <!--<script type="text/javascript" >
+            var floatlabels = new FloatLabels( '.float-flabels', {
+                style: 1,
+                customEvent      : null,
+                customLabel      : null,
+                customPlaceholder: null,
+                exclude          : '.no-label',
+                inputRegex       : /email|number|password|search|tel|text|url/,
+                prefix           : 'fl-',
+                prioritize       : 'placeholder', //place holder or label
+                requiredClass    : 'required',
+                transform        : 'input, select, textarea',
+           }
+           );
+      </script>-->
+
+     <script>
+    var titanic = new Titanic('https://rawgit.com/icons8/titanic/master/src/icons/'); // initialization
+    hover: false; // auto animated on hover (default true)
+    click: true  // auto animated on click/tap (default false)
+       
+    
+    // API
+    // titanic.isInitialized()
+    // -- just true/false flag
+    // titanic.items
+    // -- list of titanic items
+    // titanic.items[index].on(), titanic.items[index].off(), titanic.items[index].play()
+    // -- play animations of the titanic item by index
+    // titanic.on(token), titanic.off(token), titanic.play(token)
+    // -- play animations of the titanic item by token (name)
+</script>
+     
+      <script>
+  /**
+   * forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options
+   *
+   * @private
+   * @author Todd Motto
+   * @link https://github.com/toddmotto/foreach
+   * @param {Array|Object|NodeList} collection - Collection of items to iterate, could be an Array, Object or NodeList
+   * @callback requestCallback      callback   - Callback function for each iteration.
+   * @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
+   * @returns {}
+   */
+    var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+
+    var hamburgers = document.querySelectorAll(".hamburger");
+    if (hamburgers.length > 0) {
+      forEach(hamburgers, function(hamburger) {
+        hamburger.addEventListener("click", function() {
+          this.classList.toggle("is-active");
+        }, false);
+      });
+    }
+  </script>
+  
+    <script type="text/javascript">
+		$(function(){
+
+          var requestFullscreen = function (ele) {
+            if (ele.requestFullscreen) {
+              ele.requestFullscreen();
+            } else if (ele.webkitRequestFullscreen) {
+              ele.webkitRequestFullscreen();
+            } else if (ele.mozRequestFullScreen) {
+              ele.mozRequestFullScreen();
+            } else if (ele.msRequestFullscreen) {
+              ele.msRequestFullscreen();
+            } else {
+              console.log('Fullscreen API is not supported.');
+            }
+          };
+
+          var exitFullscreen = function () {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+            } else {
+              console.log('Fullscreen API is not supported.');
+            }
+          };
+
+
+          $(document).on('click','.fs-page-button',function(e){
+            e.preventDefault();
+            requestFullscreen(document.documentElement);
+          });
+
+          $(document).on('click','.fs-exit-page-button',function(e){
+            e.preventDefault();
+            exitFullscreen();
+          });
+
+          $(document).on('click','.fs-target-button',function(e){
+            e.preventDefault();
+            var target = document.getElementById($(this).attr('target'))
+            requestFullscreen(target);
+          });
+
+
+		});//end ready
+  </script>
+  
+  <!--<script>
+    var config = {
+      apiKey: '123456abcde',
+      securitykey: 'ekjlferkjflkejrlfkejlkjfwlrir9530',
+      organization_Id: '5cb098a29a1d36489127b2bb'
+    }
+  </script>
+  
+  <script src="./javascripts/window.js"></script>
+  <script src="./libs/socket.io.js"></script>
+  <script src="./javascripts/script.js"></script>-->
+
+	</body>
+</html>
