@@ -27,48 +27,57 @@
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark.css">-->
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.css">-->
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/solarized-dark.css">-->
+		<style type="text/css">
+        pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 	</head>
 
 	<body>
-  
-
-			<div data-collection="" data-document_id="" name="" id="crud_objects">
+			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding-15px">
 				<h1>CRUD Objects</h1>
-			    
-			  <h3 Class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Create Document Parameters</h3>
+
+			  <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Create Document Parameters</h3>
 				<div id="crud_create" class="display-flex flex-wrap-wrap justify-content-space-between">
-				    <div class="flex-grow-1 min-width-300pxwidth-50-percent">
+				   	
+				    <div class="flex-grow-1 min-width-300px width-50-percent">
 			        	<ul class="list-style-type-none padding-right-15px">
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 						        			<p>create namespace</p>
 										</li>
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 						        			<p>creates room</p>
 										</li>
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 						        			<p>broadcast or only save to db</p>
 										</li>
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 						        			<p>collection to save to</p>
 										</li>
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 						        			<p>data to save</p>
 										</li>
-										<li Class="padding-15px-tb">
+										<li class="padding-15px-tb">
 							        		<h4><span>element</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 						        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 										</li>
 			          </ul>
 						</div>
 	
-          	<div class="flex-grow-1 min-width-300pxwidth-50-percent">
+          	<div class="flex-grow-1 min-width-300px width-50-percent">
             		<pre>
 										<code>
   CoCreate.createDocument({
@@ -90,29 +99,29 @@
 						</div>
 				</div>	
 
-			  <h3 Class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Read Document Parameters</h3>
+			  <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Read Document Parameters</h3>
 				<div class="display-flex flex-wrap-wrap justify-content-space-between">
-				    <div class="flex-grow-1 min-width-300pxwidth-50-percent">
+				    <div class="flex-grow-1 min-width-300px width-50-percent">
 								<ul class="list-style-type-none padding-right-15px">
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 						        			<p>collection to save to</p>
 										</li>
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
 						        			<p>document_id to read from</p>
 										</li>
-										<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+										<li class="padding-15px-tb border-bottom border-color-medium-gray">
 							        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 						        			<p>data to save</p>
 										</li>
-										<li Class="padding-15px-tb">
+										<li class="padding-15px-tb">
 							        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 						        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 										</li>
 			           </ul>
 			      </div>
-          	<div class="flex-grow-1 min-width-300pxwidth-50-percent">
+          	<div class="flex-grow-1 min-width-300px width-50-percent">
 	            	<pre>
 										<code>
   CoCreate.readDocument({
@@ -130,35 +139,35 @@
 						</div>
 				</div>
 
-			  <h3 Class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Update Document Parameters</h3>
+			  <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Update Document Parameters</h3>
 				<div class="display-flex flex-wrap-wrap justify-content-space-between">
 				    <div class="flex-grow-1 min-width-300px width-50-percent">
 			            <ul class="list-style-type-none padding-right-15px">
-											<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+											<li class="padding-15px-tb border-bottom border-color-medium-gray">
 								        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 							        			<p>create namespace</p>
 											</li>
-											<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+											<li class="padding-15px-tb border-bottom border-color-medium-gray">
 								        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 							        			<p>creates room</p>
 											</li>
-											<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+											<li class="padding-15px-tb border-bottom border-color-medium-gray">
 								        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 							        			<p>broadcast or only save to db</p>
 											</li>
-											<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+											<li class="padding-15px-tb border-bottom border-color-medium-gray">
 								        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 							        			<p>collection to save to</p>
 											</li>
-											<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+											<li class="padding-15px-tb border-bottom border-color-medium-gray">
 								        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 							        			<p>Document _id to save to</p>
 											</li>
-											<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+											<li class="padding-15px-tb border-bottom border-color-medium-gray">
 								        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 							        			<p>data to save</p>
 											</li>
-											<li Class="padding-15px-tb">
+											<li class="padding-15px-tb">
 								        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 							        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 											</li>
@@ -189,41 +198,41 @@
 						</div>
 				</div>
 			    
-			  <h3 Class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Delete Document Parameters</h3>
+			  <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Delete Document Parameters</h3>
 				<div class="display-flex flex-wrap-wrap justify-content-space-between">
-				    <div class="flex-grow-1 min-width-300pxwidth-50-percent">
+				    <div class="flex-grow-1 min-width-300px width-50-percent">
 			            <ul class="list-style-type-none padding-right-15px">
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>create namespace</p>
 							</li>
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>creates room</p>
 							</li>
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>broadcast or only save to db</p>
 							</li>
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li Class="padding-15px-tb">
+							<li class="padding-15px-tb">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
 			            </ul>
 			        </div>
-	            	<div class="flex-grow-1 min-width-300pxwidth-50-percent">
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
 		            	<pre>
 							<code>
   CoCreate.deleteDocument({
@@ -243,25 +252,25 @@
 				
 				</div>
 				
-			    <h3 Class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Read Document list Parameters</h3>
+		    <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Read Document list Parameters</h3>
 				<div class="display-flex flex-wrap-wrap">
-				    <div class="flex-grow-1 min-width-300pxwidth-50-percent">
+				    <div class="flex-grow-1 min-width-300px width-50-percent">
 			            <ul class="list-style-type-none padding-right-15px">
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li Class="padding-15px-tb border-bottom border-color-medium-gray">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li Class="padding-15px-tb">
+							<li class="padding-15px-tb">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
 			            </ul>
 			        </div>
-	            	<div class="flex-grow-1 min-width-300pxwidth-50-percent">
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
 		            	<pre>
 							<code>
   CoCreate.readDcoumentList {

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CoCreateJS Documentation</title>
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cocreate.app/images/favicon.ico">
+        
+        <!-- CoCreate CSS -->
+        <!--<link rel="stylesheet" href="https://cdn.cocreate.app/CoCreate.min.css" type="text/css" />-->
+        <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
+        
+        <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-splitview/splitview.css" type="text/css" />
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
+        
+        <!-- Codemirror -->
+        <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-codemirror/src/CoCreate-codemirror.css" type="text/css" />
+        <link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>
+
+        <!-- Highlight.js-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.css">-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark.css">-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.css">-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/solarized-dark.css">-->
+        
+        <style type="text/css">
+            pre {
+                overflow-x: auto;
+                white-space: pre-wrap;
+                white-space: -moz-pre-wrap;
+                white-space: -pre-wrap;
+                white-space: -o-pre-wrap;
+                word-wrap: break-word;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+
+    <body>
+        			<div id="realtime_forms" class="padding-35px-tb">
+				<h3>Forms</h3>
+				<p>Using your forms with CoCreateJS Realtime CRUD is super easy, Form is used for grouping elements and applying attributes dynamically to it childeren. form tag can be left empty or you can apply attributes you would like to apply to childeren elements. attributtes will only be applied to childeren if the attribute does not already exist. If form realtime false it will require submitBtn</p>
+				<pre>
+					<code>&lt;form data-realtime="true" data-collection="module_activity"&gt;</code>
+				</pre>
+   
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto height-300px" id="form-sandbox">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5eefe30952c6e94c75fb5e3f"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" src="https://server.cocreate.app/CoCreate-form.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+			</div>
+			<div id="realtime_inputs" class="padding-35px-tb">
+				<h3>Inputs</h3>
+				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
+				<pre>
+					<code>&lt;input type="text" data-Collection="module_activity" data-document_id="" name="name"&gt;</code>
+				</pre>
+   
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto height-300px" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5eefe30952c6e94c75fb5e3f"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" src="https://server.cocreate.app/CoCreate-form.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+			</div>
+			<div id="realtime_checkbox" class="padding-35px-tb">
+				<h3>Checkbox</h3>
+				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
+				<pre>
+					<code>&lt;input type="checkbox" data-Collection="module_activity" data-document_id="" name="name"&gt;</code>
+				</pre>
+   
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto height-300px" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5eefe30952c6e94c75fb5e3f"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" src="https://server.cocreate.app/CoCreate-form.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+			</div>
+			<div id="realtime_textarea" class="padding-35px-tb">
+				<h3>Textarea</h3>
+				
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+				   <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+				    <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+				    <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+				    <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+				    </div>
+				
+				    <div class="svRow">
+				        
+				        <div class="svColumn width-50-percent">
+				            <div class="svPanel">
+				                <div data-realtime="true"
+				                    data-collection="modules"
+				                    data-document_id=""
+				                    name="html" 
+				                    id="testing1" 
+				                    class="codemirrorr min-width-300px">
+				                </div>
+				            </div>
+				        </div>
+				        <div class="svSplitter svVertical"> </div>
+				
+				        <div class="svColumn width-50-percent">
+				            <div class="svPanel">
+				                <iframe data-get_value="getting-started" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+				            </div>
+				        </div>
+				
+				    </div>
+				</div>
+			</div>
+			<div id="realtime_select" class="padding-35px-tb">
+				<h3>Select</h3>
+				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
+				<pre>
+					<code>&lt;select type="text" data-collection="" data-document_id="" name="name"&gt;&lt;/select&gt;</code>
+				</pre>
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="true"
+			                        data-collection="modules"
+			                        data-document_id=""
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="getting-started" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			
+			        </div>
+			    </div>
+			
+			</div>
+			<div id="realtime_htmltags" class="padding-35px-tb">
+				<h3>HTML Tags</h3>
+				<p></p>
+				<pre>
+					<code>&lt;h1 type="text" data-collection="module_activity" data-document_id="" name="name"&gt;&lt;/h1&gt;</code>
+				</pre>
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="true"
+			                        data-collection="modules"
+			                        data-document_id=""
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="getting-started" src="https://server.cocreate.app/CoCreate-components/CoCreate-htmltags/src/CoCreate-htmltags.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			
+			        </div>
+			    </div>
+			
+			</div>
+        <script>
+            var config = {
+                apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
+                securityKey: 'f26baf68-e3a9-45fc-effe-502e47116265',
+                organization_Id: '5de0387b12e200ea63204d6c'
+            }
+        </script>
+    
+        <!--CoCreateJS-->
+        <script src="https://server.cocreate.app/js/CoCreate.min.js"></script>
+        
+        <script src="https://server.cocreate.app/CoCreate-components/CoCreate-splitview/splitview.js"></script>
+        <!--<script src="https://cdn.cocreate.app/CoCreate.min.js"></script>-->
+    
+        <!-- CoCreate CodeMiirror -->
+        <!--<script type="text/javascript" src="https://cdn.cocreate.app/CoCreate-codemirror.js" async></script>-->
+        
+        <!--<script type="text/javascript" src="https://server.cocreate.app/CoCreate-components/CoCreate-fullscreen/src/CoCreate-fullscreen.js" ></script>-->
+        <!--<script src="https://server.cocreate.app/CoCreate-components/CoCreate-modal/src/CoCreate-modal.js"></script> -->
+        
+    </body>
+</html>
