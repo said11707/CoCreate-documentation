@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CoCreateJS Documentation</title>
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cocreate.app/images/favicon.ico">
+        
+        <!-- CoCreate CSS -->
+        <!--<link rel="stylesheet" href="https://cdn.cocreate.app/CoCreate.min.css" type="text/css" />-->
+        <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
+        
+        <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-splitview/splitview.css" type="text/css" />
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
+        
+        <!-- Codemirror -->
+        <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-codemirror/src/CoCreate-codemirror.css" type="text/css" />
+        <link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>
+
+        <!-- Highlight.js-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.css">-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark.css">-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.css">-->
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/solarized-dark.css">-->
+        
+        <style type="text/css">
+            pre {
+                overflow-x: auto;
+                white-space: pre-wrap;
+                white-space: -moz-pre-wrap;
+                white-space: -pre-wrap;
+                white-space: -o-pre-wrap;
+                word-wrap: break-word;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+
+    <body>
+        <div id="cocreate-logic" class="padding-15px">
+				<h1>CoCreate-logic <a href="https://github.com/CoCreate-app/CoCreate-logic"><i class="fab fa-github"></i></a></h1>
+				
+				<h2 class="padding-top-15px">Passing Attributes</h2>
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-passing-attributes">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="passing-attributes-preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="passing-attributes-code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-passing-attributes"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5ef21e70a1eae345f8c80d82"
+			                        name="html" 
+			                        id="testing_passing-attributes" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing_passing-attributes" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+				
+				<div class="display-flex flex-wrap-wrap padding-top-15px">
+				
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
+	            		<h2 class="border-bottom border-color-medium-gray">Attributes</h2>
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. Default's to true if not appllied.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange. Default's to true if not appllied.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_prefix</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+	
+			            </ul>
+			        </div>
+			        
+			        
+			        <div class="flex-grow-1 min-width-300px width-50-percent">
+				        <h2 class="border-bottom border-color-medium-gray">Reference</h2>
+		
+						<p class="padding-top-15px">Passing attributes is how you will create a flow.</p>
+						<p class="padding-top-15px">For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+						<p class="padding-top-15px">For passing attributes we utilize &lt;a&gt; tag.</p>
+						<p class="padding-top-15px">Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window.</p>
+						<p class="padding-top-15px">And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+					</div>
+
+				
+				
+				</div>
+					<h2 class="padding-top-15px">Fetching Attributes</h2>
+					<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-fetching-attributes">
+				       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+				        <a class="margin-right-10px" id="fetching-attributes-preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+				        <a class="margin-right-10px hidden" id="fetching-attributes-code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+				        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+						<a target="modal" href="module_activity_datatable.html"
+					  	     data-pass_collection="modules"
+					  	     data-pass_document_id=""
+					  	     data-pass_fetch_value=""
+					  	     data-pass_prefix=""
+					  	     data-pass_to="render"
+					  	     data-modal_width="600px"
+					  	     data-modal_height="400px"
+					  	     data-modal_color="#229954"
+					  	     data-modal_header="false"
+					  	     class="margin-right-10px">
+					  	    <i class="fas fa-external-link-alt"></i>
+					     </a>        
+					     <a class="fs-toggle margin-right-5px" target="#playground-fetching-attributes"><i class="fas fa-expand"></i></a>
+				        </div>
+				
+				        <div class="svRow">
+				            
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <div data-realtime="false"
+				                        data-collection="modules"
+				                        data-document_id="5ef21e70a1eae345f8c80d82"
+				                        name="html" 
+				                        id="testing_fetching-attributes" 
+				                        class="codemirrorr min-width-300px">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="svSplitter svVertical"> </div>
+				
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <iframe data-get_value="testing_fetching-attributes" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+	
+					
+					<div class="display-flex flex-wrap-wrap padding-top-15px">
+					
+		            	<div class="flex-grow-1 min-width-300px width-50-percent">
+				            <ul class="list-style-type-none padding-right-15px">
+				            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+								<li class="padding-15px-tb border-bottom border-color-medium-gray">
+					        		<h4><span>data-pass_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+				        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+								</li>
+
+				            </ul>
+				        </div>
+				        
+				        
+				        <div class="flex-grow-1 min-width-300px width-50-percent">
+					        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+			
+							<p class="padding-top-15px">Passing attributes is how you will create a flow.</p>
+							<p class="padding-top-15px">For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+							<p class="padding-top-15px">For passing attributes we utilize &lt;a&gt; tag.</p>
+							<p class="padding-top-15px">Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window.</p>
+							<p class="padding-top-15px">And pass an id to insert into that page's html to dynamically display data in realtime.</p>
+						</div>
+					</div>
+					
+					<h2 class="padding-top-15px">Passing Values</h2>
+					<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-passing-values">
+				       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+				        <a class="margin-right-10px" id="passing-values-preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+				        <a class="margin-right-10px hidden" id="passing-values-code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+				        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+						<a target="modal" href="module_activity_datatable.html"
+					  	     data-pass_collection="modules"
+					  	     data-pass_document_id=""
+					  	     data-pass_fetch_value=""
+					  	     data-pass_prefix=""
+					  	     data-pass_to="render"
+					  	     data-modal_width="600px"
+					  	     data-modal_height="400px"
+					  	     data-modal_color="#229954"
+					  	     data-modal_header="false"
+					  	     class="margin-right-10px">
+					  	    <i class="fas fa-external-link-alt"></i>
+					     </a>        
+					     <a class="fs-toggle margin-right-5px" target="#playground-passing-values"><i class="fas fa-expand"></i></a>
+				        </div>
+				
+				        <div class="svRow">
+				            
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <div data-realtime="false"
+				                        data-collection="modules"
+				                        data-document_id="5ef21e70a1eae345f8c80d82"
+				                        name="html" 
+				                        id="testing_passing-values" 
+				                        class="codemirrorr min-width-300px">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="svSplitter svVertical"> </div>
+				
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <iframe data-get_value="testing_passing-values" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+	
+					
+					<div class="display-flex flex-wrap-wrap padding-top-15px">
+					
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+			            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_value_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_value_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb  border-bottom border-color-medium-gray">
+				        		<h4><span>data-get_value</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>htmltags can be editable</p>
+							</li>
+	
+			            </ul>
+			        </div>
+			        
+			        
+			        <div class="flex-grow-1 min-width-300px width-50-percent">
+				        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+		
+						<p class="padding-top-15px">Passing attributes is how you will create a flow.</p>
+						<p class="padding-top-15px">For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+						<p class="padding-top-15px">For passing attributes we utilize &lt;a&gt; tag.</p>
+						<p class="padding-top-15px">Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window.</p>
+						<p class="padding-top-15px">And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+					</div>
+				</div>
+			
+				<h2 id="cocreate-conditional-logic" class="padding-top-15px">Conditional Logic</h2>
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-conditional-logic">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="conditional-logic-preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="conditional-logic-code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-conditional-logic"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5ef21e70a1eae345f8c80d82"
+			                        name="html" 
+			                        id="testing_conditional-logic" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing_conditional-logic" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+				
+				<div class="display-flex flex-wrap-wrap padding-top-15px">
+				
+            	<div class="flex-grow-1 min-width-300px width-50-percent">
+		            <ul class="list-style-type-none padding-right-15px">
+		            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-show</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+		        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+						</li>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-hide</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+		        			<p>Save data onChange. Default's to true if not appllied.</p>
+						</li>
+
+		            </ul>
+		        </div>
+		        
+		        
+		        <div class="flex-grow-1 min-width-300px width-50-percent">
+			        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+	
+					<p class="padding-top-15px">Passing attributes is how you will create a flow.</p>
+					<p class="padding-top-15px">For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+					<p class="padding-top-15px">For passing attributes we utilize &lt;a&gt; tag.</p>
+					<p class="padding-top-15px">Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window.</p>
+					<p class="padding-top-15px">And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+
+					
+				</div>
+
+				
+				
+				</div>
+			
+			</div>
+        <script>
+            var config = {
+                apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
+                securityKey: 'f26baf68-e3a9-45fc-effe-502e47116265',
+                organization_Id: '5de0387b12e200ea63204d6c'
+            }
+        </script>
+    
+        <!--CoCreateJS-->
+        <script src="https://server.cocreate.app/js/CoCreate.min.js"></script>
+        
+        <script src="https://server.cocreate.app/CoCreate-components/CoCreate-splitview/splitview.js"></script>
+        <!--<script src="https://cdn.cocreate.app/CoCreate.min.js"></script>-->
+    
+        <!-- CoCreate CodeMiirror -->
+        <!--<script type="text/javascript" src="https://cdn.cocreate.app/CoCreate-codemirror.js" async></script>-->
+        
+        <!--<script type="text/javascript" src="https://server.cocreate.app/CoCreate-components/CoCreate-fullscreen/src/CoCreate-fullscreen.js" ></script>-->
+        <!--<script src="https://server.cocreate.app/CoCreate-components/CoCreate-modal/src/CoCreate-modal.js"></script> -->
+        
+    </body>
+</html>
