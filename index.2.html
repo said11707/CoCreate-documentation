@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CoCreate.js Documentation</title>
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="https://cocreate.app/images/favicon.ico">
+		
+		<!-- CoCreate CSS -->
+		<!--<link rel="stylesheet" href="https://cdn.cocreate.app/CoCreate.min.css" type="text/css" />-->
+		<link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
+		
+		<link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-splitview/splitview.css" type="text/css" />
+		
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
+		
+		<!-- Codemirror -->
+		<!--<link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-codemirror/src/CoCreate-codemirror.css" type="text/css" />-->
+		<link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>
+
+		<!-- Highlight.js-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.css">-->
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark.css">-->
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.css">-->
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/solarized-dark.css">-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<style type="text/css" media="screen">
+		ul.cocreate-menu li{
+			min-height:40px;
+		}
+		
+		/*Sidenav Search Field */
+		.floating-label_field{
+			margin-top:0px;
+		}
+		/*.first-letter::has(i) {*/
+		/*	width:2ch;*/
+		/*}*/
+
+		/*#code + .code100{*/
+		/*	min-width:99%;*/
+		
+		/*}*/
+		
+		/*.general-text-view > *{*/
+		/*	padding: 35px 0 50px;*/
+		/*	border-bottom: 1px solid #ececec;*/
+		/*}*/
+		.general-text-view > * > *{
+			margin-bottom:15px;
+		}
+
+	</style>
+	
+	<body>
+  
+	<!-- Navbar -->
+	<div data-main_content_id="content" class="nav display-flex align-items-center bg-light-gray position-fixed" data-scroll_effect="hide-nav" data-scroll_up="1" data-scroll_down="1">
+		<!-- Menu Icon Animations -->
+		<a class="nav-toggle menu_icon--Vdots" data-toggle_sidenav="menuL">
+			<div class="circle"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+		</a>
+
+		<!-- Horizontal Scroll Nav/Tabs -->
+		<ul class="cocreate-scroll display-inline-flex direction-rtl font-size-20px align-items-center list-style-type-none width-100-percent height-50px">
+			<!--<li class="margin-right-15px">-->
+			<!--	<a href="https://cocreate.app/console" >Login / Sign Up</a>-->
+			<!--</li>-->
+			<!-- Window Controls -->
+			<!--<li><a class="btn-wnd-close"><i class="fas fa-times">-->
+			<!--  </i></a></li>-->
+			<!--<li><a class="btn-wnd-maximize"><i data-transform_to="far fa-window-restore" class="far fa-window-maximize">-->
+			<!--  </i></a></li>-->
+			<!--<li><a class="btn-modal-minimize"><i class="far fa-window-minimize">-->
+			<!--  </i></a></li>-->
+			<!-- fullscreen toogle and icon transform-->
+			<li class="margin-right-15px">
+				<a class="fs-toggle"><i data-transform_to="fas fa-compress" class="fas fa-expand"></i></a>
+			</li>
+			<!--Render Builder -->
+			<li class="margin-right-15px">
+				<a data-window_url="../render.html" data-pass_collection="module_activity" data-pass_document_id="5dec38b6189f212c8ebd0158" data-pass_prefix="" data-pass_to="builder" data-window_width="100%">
+					<i class="fas fa-palette"></i>
+					<div data-pass_collection="modules" data-pass_module_id="" data-pass_prefix="" data-pass_to="render" class="sessionBuilderUI_Id"></div>
+				</a>
+			</li>
+			<!-- Render Module Form -->
+			<!--<li><a data-window_url="render.html" data-pass_collection="modules" data-pass_prefix="form_" data-pass_module_id="" data-pass_module_activity_id="" data-pass_to="render" data-window_ajax="false" data-window_width="320px" data-window_height="100%" data-window_color="#229954" data-window_x="" data-window_y="" data-pass_id="render"><i class="fas fa-plus">-->
+			<!--  </i></a></li>-->
+		</ul>
+			  <!-- Avatar -->
+    	<div class="avatar-wrapper margin-5px-tb margin-right-10px">
+			<a class="avatar round" target="modal" href="https://server.cocreate.app/CoCreate-adminUI/user-profile/user-profile.html" 
+				data-pass_collection="modules" 
+				data-pass_prefix="" 
+				data-pass_document_id="5dd010bccbc25f0cdb1a4d9f" 
+				data-pass_to="render" 
+				data-modal_width="300px" 
+				data-modal_height="375px" 
+				data-modal_color="#229954"
+				data-modal_header="false">
+  				<span data-collection="users" 
+  					data-document_id="" 
+  					name="name" 
+  					class="sessionUser_Id first-letter avatar-name">
+  					<i class="fas fa-sign-in-alt"></i>
+  				</span>
+  				<span data-collection="users" data-document_id="" name="profile_image" class="sessionUser_Id avatar-image">
+  				  <img src="images/Velazquez.jpg" onerror="this.style.display='none'"/>
+  				</span>
+			</a>
+  			  <div class="avatar-status off"></div>
+		</div>
+		</div>
+	
+	<!-- Main Content with Viewport/Boundaries for windows -->
+	<div class="position-fixed margin-top-50px" data-main_content_id="content" id="modal-viewport"></div>
+
+	<div class="cocreate-container width-auto" data-main_content_id="content">
+		<div class="general-text-view padding-15px padding-top-50px padding-30px-lr">
+			
+			<div id="intro" class="padding-35px-tb">
+				<h1>Introduction</h1>
+				<h3 id="cocreatejs">CoCreateJS</h3>
+				<p> A dependancy free, vanilla javascript Realtime CRUD and Collaboration API. Easily integrates in any HTML template using HTML5 data-attributtes. Converts a regular html website into a dynamic Realtime application. If you know basic html you can easily implement and use the CoCreateJS library/framework. If you have javascript knowledege, CoCreateJS is highly extendable Object oriented collaboration framework. A CoCreate api key is required to open a real time socket channels.</p>
+				
+				<h3 id="cocreatecss">CoCreateCSS</h3>
+				<p>A dependancy free, CSS and vanilla javascript library. Containing a set of easy to use natraul language helper classes, and a wide range of components to assist in developing modern UI/UX. We are excited to see what you build.</p>
+				
+				<h3>Micro Service Archeticture</h3>
+				<p>CoCreateJS 90kb gizipped and CoCreateCSS 15kb gzipped were compiled from a large list of opensource projects. You can include and compile only the components you need, create custom components and contribute to a long list of existing componenets located on github</p>
+				
+			</div>
+			
+			<div id="getting_started">
+				<h1>Getting Started</h1>
+				<p>Go to <a href="https://CoCreate.app/register">CoCreate.app/register</a>  and retrieve your script which will include the necessary api and security key. And paste it at the end before the ending body tag of any page where you would like to fetch and save data in real time.</p>
+
+<pre>
+	<code>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link src="http://cdn.cocreate.app/CoCreate.min.css"&gt;&lt;/link&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+  
+	&lt;script&gt;
+	  var config = {
+   	  apiKey: 'test123456',
+	  securityKey: 'test123456',
+	  organization_Id: '5d0e4e6147fb95a3b8719f12'
+	}
+	&lt;/script&gt;
+
+    &lt;script src="http://cdn.cocreate.app/CoCreate.min.js"&gt;&lt;/script&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+	</code>
+</pre>
+			</div>
+			<div id="html_elements" class="padding-35px-tb">
+
+				<h1>REALTIME HTML Elements</h1>
+				<!--<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">-->
+			 <!--      <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">-->
+			 <!--       <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>-->
+			 <!--       <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>-->
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+				<!--	<a target="modal" href="module_activity_datatable.html"-->
+				<!--  	     data-pass_collection="modules"-->
+				<!--  	     data-pass_document_id=""-->
+				<!--  	     data-pass_fetch_value=""-->
+				<!--  	     data-pass_prefix=""-->
+				<!--  	     data-pass_to="render"-->
+				<!--  	     data-modal_width="600px"-->
+				<!--  	     data-modal_height="400px"-->
+				<!--  	     data-modal_color="#229954"-->
+				<!--  	     data-modal_header="false"-->
+				<!--  	     class="margin-right-10px">-->
+				<!--  	    <i class="fas fa-external-link-alt"></i>-->
+				<!--     </a>        -->
+				<!--     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>-->
+			 <!--       </div>-->
+			
+			 <!--       <div class="svRow">-->
+			            
+			 <!--           <div class="svColumn width-50-percent">-->
+			 <!--               <div class="svPanel">-->
+			 <!--                   <div data-realtime="false"-->
+			 <!--                       data-collection="modules"-->
+			 <!--                       data-document_id="5ef21e70a1eae345f8c80d82"-->
+			 <!--                       name="html" -->
+			 <!--                       id="testing1" -->
+			 <!--                       class="codemirrorr min-width-300px">-->
+			 <!--                   </div>-->
+			 <!--               </div>-->
+			 <!--           </div>-->
+			 <!--           <div class="svSplitter svVertical"> </div>-->
+			
+			 <!--           <div class="svColumn width-50-percent">-->
+			 <!--               <div class="svPanel">-->
+			 <!--                   <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>-->
+			 <!--               </div>-->
+			 <!--           </div>-->
+			 <!--       </div>-->
+			 <!--   </div>-->
+
+						        <div class="flex-grow-1 min-width-300px ">
+
+					<p class="padding-top-15px">You will have the option to set realtime as true or false. If data-realtime set to false then the form will require a button to save(&lt;button class="submitBtn"&gt;). And yes there is a method for redirecting using a  btn and &lt;a&gt; tag which we will discuss at length further in this documentation.</p>
+					<p class="padding-top-15px">We have 2 collections by default “modules” and “module_activity”. If the data-collection="" is left empty or if the attribute is not used it will default to “module_activity”.</p> 
+					<p class="padding-top-15px">If your logic requires a new collection just add it to the attribute (data-collection='custom collection name') and it will be created if it does not exist. </p>
+					<p class="padding-top-15px">By adding attribute data-form_id=”a unique id” allows for a form creating a new record to be updateable in Realtime. It also differentiates the form from all other forms in the case that you may have multiple forms on the same page.</p>
+					
+				</div>
+		            	<h2 class="border-bottom border-color-medium-gray">Attributes</h2>
+				<div class="display-flex flex-wrap-wrap">
+            	<div class="flex-grow-1 min-width-300px width-50-percent">
+		            <ul class="list-style-type-none padding-right-15px">
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-realtime</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+		        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+						</li>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+		        			<p>Save data onChange. Default's to true if not appllied.</p>
+						</li>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+		        			<p>Save data onChange. Default's to true if not appllied.</p>
+						</li>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+		        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+						</li>
+
+		            </ul>
+		        </div>
+		        
+		        
+		        <div class="flex-grow-1 min-width-300px width-50-percent">
+		            <ul class="list-style-type-none padding-right-15px">
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-read_value</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+		        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+						</li>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-save_value</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+		        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+						</li>
+						<li class="padding-15px-tb  border-bottom border-color-medium-gray">
+			        		<h4><span>contenteditable</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+		        			<p>htmltags can be editable</p>
+						</li>
+						<li class="padding-15px-tb">
+			        		<h4><span>data-cursors</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+		        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+						</li>
+					</ul>
+				</div>
+
+				
+				
+				</div>
+			
+			</div>
+
+			<div id="realtime_forms" class="padding-35px-tb">
+				<h3>Forms</h3>
+				<p>Using your forms with CoCreateJS Realtime CRUD is super easy, Form is used for grouping elements and applying attributes dynamically to it childeren. form tag can be left empty or you can apply attributes you would like to apply to childeren elements. attributtes will only be applied to childeren if the attribute does not already exist. If form realtime false it will require submitBtn</p>
+				<pre>
+					<code>&lt;form data-realtime="true" data-collection="module_activity"&gt;</code>
+				</pre>
+   
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto height-300px" id="form-sandbox">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5eefe30952c6e94c75fb5e3f"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" src="https://server.cocreate.app/CoCreate-form.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+			</div>
+			<div id="realtime_inputs" class="padding-35px-tb">
+				<h3>Inputs</h3>
+				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
+				<pre>
+					<code>&lt;input type="text" data-Collection="module_activity" data-document_id="" name="name"&gt;</code>
+				</pre>
+   
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto height-300px" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5eefe30952c6e94c75fb5e3f"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" src="https://server.cocreate.app/CoCreate-form.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+			</div>
+			<div id="realtime_checkbox" class="padding-35px-tb">
+				<h3>Checkbox</h3>
+				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
+				<pre>
+					<code>&lt;input type="checkbox" data-Collection="module_activity" data-document_id="" name="name"&gt;</code>
+				</pre>
+   
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto height-300px" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5eefe30952c6e94c75fb5e3f"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" src="https://server.cocreate.app/CoCreate-form.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+			</div>
+			<div id="realtime_textarea" class="padding-35px-tb">
+				<h3>Textarea</h3>
+				
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+				   <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+				    <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+				    <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+				    <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+				    </div>
+				
+				    <div class="svRow">
+				        
+				        <div class="svColumn width-50-percent">
+				            <div class="svPanel">
+				                <div data-realtime="true"
+				                    data-collection="modules"
+				                    data-document_id=""
+				                    name="html" 
+				                    id="testing1" 
+				                    class="codemirrorr min-width-300px">
+				                </div>
+				            </div>
+				        </div>
+				        <div class="svSplitter svVertical"> </div>
+				
+				        <div class="svColumn width-50-percent">
+				            <div class="svPanel">
+				                <iframe data-get_value="getting-started" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+				            </div>
+				        </div>
+				
+				    </div>
+				</div>
+			</div>
+			<div id="realtime_select" class="padding-35px-tb">
+				<h3>Select</h3>
+				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
+				<pre>
+					<code>&lt;select type="text" data-collection="" data-document_id="" name="name"&gt;&lt;/select&gt;</code>
+				</pre>
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="true"
+			                        data-collection="modules"
+			                        data-document_id=""
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="getting-started" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			
+			        </div>
+			    </div>
+			
+			</div>
+			<div id="realtime_htmltags" class="padding-35px-tb">
+				<h3>HTML Tags</h3>
+				<p></p>
+				<pre>
+					<code>&lt;h1 type="text" data-collection="module_activity" data-document_id="" name="name"&gt;&lt;/h1&gt;</code>
+				</pre>
+			    <div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="true"
+			                        data-collection="modules"
+			                        data-document_id=""
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="getting-started" src="https://server.cocreate.app/CoCreate-components/CoCreate-htmltags/src/CoCreate-htmltags.html" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			
+			        </div>
+			    </div>
+			
+			</div>
+			
+			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding-35px-tb">
+				<h1>CRUD Objects</h1>
+			    
+			    <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Create Document Parameters</h3>
+				<div id="crud_create" class="display-flex flex-wrap-wrap justify-content-space-between">
+				    <div class="flex-grow-1 min-width-300px width-45-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>create namespace</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>creates room</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>broadcast or only save to db</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>element</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+			            </ul>
+			        </div>
+	
+	            	<div class="flex-grow-1 min-width-300px width-45-percent">
+		            	<pre>
+							<code>
+  CoCreate.createDocument({
+    namespace:'',
+    room:'',
+    broadcast: true/false, (default=ture)
+    broadcast_sender: true/false, (default=true) 
+
+    collection: "test123",
+    data:{
+      name1:“hello”,
+      name2:  “hello1”
+    },
+    element: “xxxx”,
+    metaData: "xxxx"
+  }),
+							</code>
+						</pre>
+					</div>
+				</div>	
+
+			    <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Read Document Parameters</h3>
+				<div class="display-flex flex-wrap-wrap justify-content-space-between">
+				    <div class="flex-grow-1 min-width-300px width-45-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>document_id to read from</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+			            </ul>
+			        </div>
+	            	<div class="flex-grow-1 min-width-300px width-45-percent">
+		            	<pre>
+							<code>
+  CoCreate.readDocument({
+    collection: "module",
+    document_id: "",
+    data:[
+      {name: “name1”},
+      {name: “name2”}
+    ],
+    element: “xxxx”,
+    metaData: "xxxx"
+  }),
+							</code>
+						</pre>
+					</div>
+				</div>
+
+			    <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Update Document Parameters</h3>
+				<div class="display-flex flex-wrap-wrap justify-content-space-between">
+				    <div class="flex-grow-1 min-width-300px width-45-percent">
+			            <ul class="list-style-type-none">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>create namespace</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>creates room</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>broadcast or only save to db</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Document _id to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+			            </ul>
+			        </div>
+	
+	            	<div class="flex-grow-1 min-width-300px width-45-percent">
+		            	<pre>
+							<code>
+  CoCreate.updateDocument({
+    namespace: '',
+    room: '',
+    broadcast: true/false,
+    broadcast_sender: true/false,
+
+    collection: "test123",
+    document_id: "document_id",
+    data:{
+      name1:“hello”,
+      name2:  “hello1”
+    },
+    delete_fields:["name3", "name4"],
+    element: “xxxx”,
+    metaData: "xxxx"
+  }),
+							</code>
+						</pre>
+					</div>
+				</div>
+			    
+			    <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Delete Document Parameters</h3>
+				<div class="display-flex flex-wrap-wrap justify-content-space-between">
+				    <div class="flex-grow-1 min-width-300px width-45-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>create namespace</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>creates room</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>broadcast or only save to db</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+			            </ul>
+			        </div>
+	            	<div class="flex-grow-1 min-width-300px width-45-percent">
+		            	<pre>
+							<code>
+  CoCreate.deleteDocument({
+    namespace: '',
+    room: '',
+    broadcast: true/false,
+    broadcast_sender: true/false,
+
+    collection: "module",
+    document_id: "",
+    element: “xxxx”,
+    metadata: "xxxx"
+  }),
+							</code>
+						</pre>
+					</div>
+				
+				</div>
+				
+			    <h3 class="padding-top-30px padding-bottom-15px border-bottom border-color-medium-gray">Read Document list Parameters</h3>
+				<div class="display-flex flex-wrap-wrap">
+				    <div class="flex-grow-1 min-width-300px width-45-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+			            </ul>
+			        </div>
+	            	<div class="flex-grow-1 min-width-300px width-45-percent">
+		            	<pre>
+							<code>
+  CoCreate.readDcoumentList {
+    collection: "modules",
+    element: "xxxx",
+    metadata: "",
+    operator: {
+    fetch: {
+      name: 'xxxx',
+      value: 'xxxxx'
+    },
+    filters: [{
+      name: 'field1',
+      operator: "contain | range | eq | ne | lt | lte | gt | gte | in | nin",
+      value: [v1, v2, ...]
+    }, {
+      name: "_id",
+      opreator: "in",
+      value: ["id1"]
+    }],
+    orders: [{
+      name: 'field-x',
+      type: 1 | -1
+    }],
+    search: {
+      type: 'or | and',
+      value: [value1, value2]
+    },
+
+    startIndex: 0 (integer),
+    count: 0 (integer)
+    },
+
+    is_collection: true | false,
+    //. case fetch document case
+    created_ids : [id1, id2, ...],
+
+
+    -------- additional response data -----------
+    data: [] // array
+  }
+							</code>
+						</pre>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div id="templating" class="padding-35px-tb">
+				<h1>Templating</h1>
+				
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5ef21e70a1eae345f8c80d82"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			        
+			    </div>
+
+				
+				<div class="display-flex flex-wrap-wrap">
+				
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+			            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-template_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-fetch_collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. Default's to true if not appllied.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-fetch_name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange. Default's to true if not appllied.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-fetch_value</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-fetch_count</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-order_by</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-order_type</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-search_type</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+	
+			            </ul>
+			        </div>
+
+			        <div class="flex-grow-1 min-width-300px width-50-percent">
+				        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+		
+						<p>Passing attributes is how you will create a flow. For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+						<p>For passing attributes we utilize &lt;a&gt; tag. Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window. And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+					</div>
+				</div>
+				
+				<h2>Filters</h2>
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5ef21e70a1eae345f8c80d82"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+				
+				<div class="display-flex flex-wrap-wrap">
+				
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+			            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+
+			            </ul>
+			        </div>
+			        
+			        
+			        <div class="flex-grow-1 min-width-300px width-50-percent">
+				        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+		
+						<p>Passing attributes is how you will create a flow. For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+						<p>For passing attributes we utilize &lt;a&gt; tag. Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window. And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+					</div>
+				</div>
+				
+				<h2>Results</h2>
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5ef21e70a1eae345f8c80d82"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+				
+				<div class="display-flex flex-wrap-wrap">
+				
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+			            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+
+			            </ul>
+			        </div>
+			        
+			        
+			        <div class="flex-grow-1 min-width-300px width-50-percent">
+				        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+		
+						<p>Passing attributes is how you will create a flow. For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+						<p>For passing attributes we utilize &lt;a&gt; tag. Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window. And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+					</div>
+				</div>
+				
+				
+			</div>	
+			<div id="logic" class="padding-35px-tb">
+				<h1>Logic</h1>
+				
+				<h2>Passing Attributtes</h2>
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5ef21e70a1eae345f8c80d82"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+				
+				<div class="display-flex flex-wrap-wrap">
+				
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+			            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. Default's to true if not appllied.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange. Default's to true if not appllied.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_prefix</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+	
+			            </ul>
+			        </div>
+			        
+			        
+			        <div class="flex-grow-1 min-width-300px width-50-percent">
+				        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+		
+						<p>Passing attributes is how you will create a flow. For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+						<p>For passing attributes we utilize &lt;a&gt; tag. Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window. And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+					</div>
+
+				
+				
+				</div>
+					<h2>Fetching Attributtes</h2>
+					<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+				       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+				        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+				        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+				        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+						<a target="modal" href="module_activity_datatable.html"
+					  	     data-pass_collection="modules"
+					  	     data-pass_document_id=""
+					  	     data-pass_fetch_value=""
+					  	     data-pass_prefix=""
+					  	     data-pass_to="render"
+					  	     data-modal_width="600px"
+					  	     data-modal_height="400px"
+					  	     data-modal_color="#229954"
+					  	     data-modal_header="false"
+					  	     class="margin-right-10px">
+					  	    <i class="fas fa-external-link-alt"></i>
+					     </a>        
+					     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+				        </div>
+				
+				        <div class="svRow">
+				            
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <div data-realtime="false"
+				                        data-collection="modules"
+				                        data-document_id="5ef21e70a1eae345f8c80d82"
+				                        name="html" 
+				                        id="testing1" 
+				                        class="codemirrorr min-width-300px">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="svSplitter svVertical"> </div>
+				
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+	
+					
+					<div class="display-flex flex-wrap-wrap">
+					
+		            	<div class="flex-grow-1 min-width-300px width-50-percent">
+				            <ul class="list-style-type-none padding-right-15px">
+				            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+								<li class="padding-15px-tb border-bottom border-color-medium-gray">
+					        		<h4><span>data-pass_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+				        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+								</li>
+
+				            </ul>
+				        </div>
+				        
+				        
+				        <div class="flex-grow-1 min-width-300px width-50-percent">
+					        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+			
+							<p>Passing attributes is how you will create a flow. For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+							<p>For passing attributes we utilize &lt;a&gt; tag. Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window. And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+						</div>
+					</div>
+					
+					<h2>Passing Values</h2>
+					<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+				       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+				        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+				        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+				        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+						<a target="modal" href="module_activity_datatable.html"
+					  	     data-pass_collection="modules"
+					  	     data-pass_document_id=""
+					  	     data-pass_fetch_value=""
+					  	     data-pass_prefix=""
+					  	     data-pass_to="render"
+					  	     data-modal_width="600px"
+					  	     data-modal_height="400px"
+					  	     data-modal_color="#229954"
+					  	     data-modal_header="false"
+					  	     class="margin-right-10px">
+					  	    <i class="fas fa-external-link-alt"></i>
+					     </a>        
+					     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+				        </div>
+				
+				        <div class="svRow">
+				            
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <div data-realtime="false"
+				                        data-collection="modules"
+				                        data-document_id="5ef21e70a1eae345f8c80d82"
+				                        name="html" 
+				                        id="testing1" 
+				                        class="codemirrorr min-width-300px">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="svSplitter svVertical"> </div>
+				
+				            <div class="svColumn width-50-percent">
+				                <div class="svPanel">
+				                    <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+	
+					
+					<div class="display-flex flex-wrap-wrap">
+					
+	            	<div class="flex-grow-1 min-width-300px width-50-percent">
+			            <ul class="list-style-type-none padding-right-15px">
+			            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_value_to</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data-pass_value_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb  border-bottom border-color-medium-gray">
+				        		<h4><span>data-get_value</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>htmltags can be editable</p>
+							</li>
+	
+			            </ul>
+			        </div>
+			        
+			        
+			        <div class="flex-grow-1 min-width-300px width-50-percent">
+				        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+		
+						<p>Passing attributes is how you will create a flow. For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+						<p>For passing attributes we utilize &lt;a&gt; tag. Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window. And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+					</div>
+
+				
+				</div>
+			
+				<h2 id="conditional-logic">Conditional Logic</h2>
+				<div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">
+			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
+			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
+			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<a target="modal" href="module_activity_datatable.html"
+				  	     data-pass_collection="modules"
+				  	     data-pass_document_id=""
+				  	     data-pass_fetch_value=""
+				  	     data-pass_prefix=""
+				  	     data-pass_to="render"
+				  	     data-modal_width="600px"
+				  	     data-modal_height="400px"
+				  	     data-modal_color="#229954"
+				  	     data-modal_header="false"
+				  	     class="margin-right-10px">
+				  	    <i class="fas fa-external-link-alt"></i>
+				     </a>        
+				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
+			        </div>
+			
+			        <div class="svRow">
+			            
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <div data-realtime="false"
+			                        data-collection="modules"
+			                        data-document_id="5ef21e70a1eae345f8c80d82"
+			                        name="html" 
+			                        id="testing1" 
+			                        class="codemirrorr min-width-300px">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="svSplitter svVertical"> </div>
+			
+			            <div class="svColumn width-50-percent">
+			                <div class="svPanel">
+			                    <iframe data-get_value="testing1" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+				
+				<div class="display-flex flex-wrap-wrap">
+				
+            	<div class="flex-grow-1 min-width-300px width-50-percent">
+		            <ul class="list-style-type-none padding-right-15px">
+		            	<h3 class="border-bottom border-color-medium-gray">Attributes</h3>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-show</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+		        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+						</li>
+						<li class="padding-15px-tb border-bottom border-color-medium-gray">
+			        		<h4><span>data-hide</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+		        			<p>Save data onChange. Default's to true if not appllied.</p>
+						</li>
+
+		            </ul>
+		        </div>
+		        
+		        
+		        <div class="flex-grow-1 min-width-300px width-50-percent">
+			        <h3 class="border-bottom border-color-medium-gray">Reference</h3>
+	
+					<p>Passing attributes is how you will create a flow. For example you may have a customer profile that when you click on the edit icon a form opens for editing the customers information.</p>
+					<p>For passing attributes we utilize &lt;a&gt; tag. Using &lt;/a&gt; tag you can open a modal, movable window/modal or new page in the same tab, new tab or new window. And pass an id to insert into that page's html to dynamically display data in realtime. </p>
+
+					
+				</div>
+
+				
+				
+				</div>
+			
+			</div>
+			<!--<div id="redirect_attributes">-->
+			<!--	<h1>&lt;a&gt; tag url redirect Attributes</h1>-->
+			<!--	<ul>-->
+			<!--		<li>-->
+			<!--			data-pass_to='unique_id'-->
+			<!--			<ul>-->
+			<!--				<li>To connect to html inputs and tags to pass id </li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--		<li>-->
+			<!--			&lt;a href=”url.html or http:/url.com”-->
+			<!--			<ul>-->
+			<!--				<li>target=”_blank, _window, same_page or leave empty”</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--	</ul>-->
+			<!--</div>-->
+			<!--<div id="windows_model">-->
+			<!--	<h1>WINDOWS & MODALS</h1>-->
+			<!--	<p>We have  windows as a movable modal with a set of attributes to control it from the front end and pass values to it to display dynamic content</p>-->
+			<!--	<p>&nbsp;</p>-->
+			<!--	<h3>Pass attributes to movable window/modal</h3>-->
+			<!--	<ul>-->
+			<!--		<li>-->
+			<!--			data-pass_to=’any id’-->
+			<!--			<ul>-->
+			<!--				<li>Id to connect to data-pass_id</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--		<li>-->
+			<!--			data-pass_id=’any id’-->
+			<!--			<ul>-->
+			<!--				<li>Used in input and html to pass attributes</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--		<li>-->
+			<!--			data-modal_url=’url.html or http:/url.com/’-->
+			<!--			<ul>-->
+			<!--				<li>To define url that will open in dhtlmx window</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--		<li>-->
+			<!--			data-modal_ajax="false"-->
+			<!--			<ul>-->
+			<!--				<li>Used to turn ajax on if false html will be loaded as an iframe</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--		<li>data-modal_width="600px"</li>-->
+			<!--		<li>data-modal_height="100%"</li>-->
+			<!--		<li>data-modal_color="008B8B#"</li>-->
+			<!--		<li>data-modal_x="20"</li>-->
+			<!--		<li>data-modal_y="40"</li>-->
+			<!--		<li>-->
+			<!--			data-modal_header=”true | false”-->
+			<!--			<ul>-->
+			<!--				<li>Show / hide default header title</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--		<li>-->
+			<!--			Passable data attributes-->
+			<!--			<ul>-->
+			<!--				<li>data-pass_collection</li>-->
+			<!--				<li>data-pass_document_id</li>-->
+			<!--				<li>-->
+			<!--					data-pass_prefix-->
+			<!--					<ul>-->
+			<!--						<li>Used to pass prefix and merge with attribute  name=’prfeix_name_attribute’</li>-->
+			<!--					</ul>-->
+			<!--				</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--		<li>-->
+			<!--			data-open_in=”root | page | parent”-->
+			<!--			<ul>-->
+			<!--				<li>root:  Parent_id is root page case</li>-->
+			<!--				<li>page: Parent_id is parent page’s id</li>-->
+			<!--				<li>parent: Parent_id is parent page’s parent id</li>-->
+			<!--			</ul>-->
+			<!--		</li>-->
+			<!--	</ul>-->
+			<!--	<h3>Modal</h3>-->
+			<!--	<p>You can use any framework modal. By adding the id and trigger based on your prefered frameworks modal documentation. Combined with our passing attributes feature you can open dynamic data in modal.</p>-->
+			<!--</div>-->
+			<!--<div id="website-builder">-->
+			<!--	<h1>REALTIME Website Builder - Open Source</h1>-->
+			<!--	<p>In development will be open source</p>-->
+			<!--	<h3>Domain Register and Transfer</h3>-->
+			<!--</div>-->
+
+		<!--	<div id="form_cocreate-select">-->
+		<!--		<h3>CoCreate Select</h3>-->
+		<!--		<p>A custom 100% templatable javascript select field. The attribute data-collection_fetch is used to return all documents from a collection. The attribute data-module_fetch is used only if the collection is module-activty. It allows you to filter results by module_id. The module_id can be separated by commas to show a few, one, or all if left empty.<p>-->
+		<!--		<p>data-template_id is used to define a template that will be used to display the search results.</p>-->
+
+			  <!--  <div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">-->
+			  <!--     <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">-->
+			  <!--      <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>-->
+			  <!--      <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>-->
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<!--<a target="modal" href="module_activity_datatable.html"-->
+				 <!-- 	     data-pass_collection="modules"-->
+				 <!-- 	     data-pass_document_id=""-->
+				 <!-- 	     data-pass_fetch_value=""-->
+				 <!-- 	     data-pass_prefix=""-->
+				 <!-- 	     data-pass_to="render"-->
+				 <!-- 	     data-modal_width="600px"-->
+				 <!-- 	     data-modal_height="400px"-->
+				 <!-- 	     data-modal_color="#229954"-->
+				 <!-- 	     data-modal_header="false"-->
+				 <!-- 	     class="margin-right-10px">-->
+				 <!-- 	    <i class="fas fa-external-link-alt"></i>-->
+				 <!--    </a>        -->
+				 <!--    <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>-->
+			  <!--      </div>-->
+			
+			  <!--      <div class="svRow">-->
+			            
+			  <!--          <div class="svColumn width-50-percent">-->
+			  <!--              <div class="svPanel">-->
+			  <!--                  <div data-realtime="true"-->
+			  <!--                      data-collection="modules"-->
+			  <!--                      data-document_id=""-->
+			  <!--                      name="html" -->
+			  <!--                      id="testing1" -->
+			  <!--                      class="codemirrorr min-width-300px">-->
+			  <!--                  </div>-->
+			  <!--              </div>-->
+			  <!--          </div>-->
+			  <!--          <div class="svSplitter svVertical"> </div>-->
+			
+			  <!--          <div class="svColumn width-50-percent">-->
+			  <!--              <div class="svPanel">-->
+			  <!--                  <iframe data-get_value="getting-started" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>-->
+			  <!--              </div>-->
+			  <!--          </div>-->
+			
+			  <!--      </div>-->
+			  <!--  </div>-->
+		<!--	</div>-->
+		<!--	<div id="input_array">-->
+		<!--		<h3>Array of Inputs</h3>-->
+		<!--		<p>Used to clone a group of inputs. Common use cases are items in an invoice, multiple addresses, phone numbers, etc</p>-->
+		<!--		<p>Data-array_name used to create a name for the group of inputs and values.</p>-->
+		<!--		<p>Data-item_template_id used to define the template that contains  the inputs you would like cloned</p>-->
+				
+			  <!--  <div class="svColumn overflow-hidden card border-radius-2px width-auto" id="playground-1">-->
+			  <!--     <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">-->
+			  <!--      <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>-->
+			  <!--      <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>-->
+			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
+					<!--<a target="modal" href="module_activity_datatable.html"-->
+				 <!-- 	     data-pass_collection="modules"-->
+				 <!-- 	     data-pass_document_id=""-->
+				 <!-- 	     data-pass_fetch_value=""-->
+				 <!-- 	     data-pass_prefix=""-->
+				 <!-- 	     data-pass_to="render"-->
+				 <!-- 	     data-modal_width="600px"-->
+				 <!-- 	     data-modal_height="400px"-->
+				 <!-- 	     data-modal_color="#229954"-->
+				 <!-- 	     data-modal_header="false"-->
+				 <!-- 	     class="margin-right-10px">-->
+				 <!-- 	    <i class="fas fa-external-link-alt"></i>-->
+				 <!--    </a>        -->
+				 <!--    <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>-->
+			  <!--      </div>-->
+			
+			  <!--      <div class="svRow">-->
+			            
+			  <!--          <div class="svColumn width-50-percent">-->
+			  <!--              <div class="svPanel">-->
+			  <!--                  <div data-realtime="true"-->
+			  <!--                      data-collection="modules"-->
+			  <!--                      data-document_id=""-->
+			  <!--                      name="html" -->
+			  <!--                      id="testing1" -->
+			  <!--                      class="codemirrorr min-width-300px">-->
+			  <!--                  </div>-->
+			  <!--              </div>-->
+			  <!--          </div>-->
+			  <!--          <div class="svSplitter svVertical"> </div>-->
+			
+			  <!--          <div class="svColumn width-50-percent">-->
+			  <!--              <div class="svPanel">-->
+			  <!--                  <iframe data-get_value="getting-started" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>-->
+			  <!--              </div>-->
+			  <!--          </div>-->
+			
+			  <!--      </div>-->
+			  <!--  </div>-->
+		<!--	</div>-->
+
+		</div>
+	</div>
+	</div>
+	<div id="menuL" class="cocreate-sidenav bg-very-light-gray" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="expanded" sidenav-default_phone="offcanvas">
+		<div class="display-flex height-50px bg-medium-light-gray">
+			<span class="logo-icon padding-12px-lr">
+				<img data-collection="organizations" data-document_id="" name="logo" data-pass_id="me1234" src="https://server.cocreate.app/images/cocreate.png" height="40px"alt="...">
+			</span>
+			<span data-collection="organizations" data-document_id="" name="name" data-pass_id="me1234" class="logo-name">CoCreate Docs</span>
+		</div>
+		
+        <div class="cocreate-search padding-5px height-50px"> 
+        	<form id='menu-search'>
+            <input type="text" class="searchInput floating-label browser-default" data-pass_value_to="me1234">
+              <span class="passValueBtn position-relative bottom-28px right-14px float-right font-size-18px">
+                <a  target="modal" href="template-engine.html"
+          			   data-pass_to="me1234" 
+          			   data-modal_ajax="false" 
+          			   data-modal_width="900px" 
+          			   data-modal_height="100%" 
+          			   data-modal_color="#229954"
+          			   data-modal_header="true"
+          			   data-modal_x="" 
+          			   data-modal_y="">
+                  <i class="fas fa-search"></i>
+                </a>
+              </span>
+        	</form>
+        </div>
+        <div class="padding-right-5px">
+			<ul class="cocreate-menu cocreate-scroll vh-120  margin-right-5px">
+			
+			<!--<li class="menuItem margin-top-20px padding-left-15px font-size-20px">-->
+			<!--  <a href="#intro">-->
+			<!--    <span>Introduction</span>-->
+			<!--  </a>-->
+			<!--</li>-->
+			<!--<li class="menuItem padding-left-30px">-->
+			<!--  <a href="#cocreatejs">-->
+			<!--    <span><i class="fas fa-angle-right"></i></span>-->
+			<!--    <span>CoCreateJS</span>-->
+			<!--  </a>-->
+			<!--</li>-->
+			<!--<li class="menuItem padding-left-30px">-->
+			<!--  <a href="#cocreatecss">-->
+			<!--    <span><i class="fas fa-angle-right"></i></span>-->
+			<!--    <span>CoCreateCSS</span>-->
+			<!--  </a>-->
+			<!--</li>-->
+			
+		<li class="menuItem font-size-20px">
+		  <a class="padding-left-15px width-100-percent" data-show=".gettingstarted" data-hide=".gettingstarted">
+		    <span>Getting Started</span>
+		    <span class="float-right"><i class="fas fa-chevron-down gettingstarted"></i><i class="fas fa-chevron-up gettingstarted hidden"></i></span>
+		  </a>
+		</li>
+		<div class="gettingstarted hidden">
+			<li class="menuItem padding-left-20px">
+			  <a href="#api_keys">
+			    <span>API Keys</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-20px">
+			  <a href="#cdn">
+			    <span>CDN</span>
+			  </a>
+			</li>
+		</div>	
+		
+		<li class="menuItem font-size-20px">
+		  <a class="padding-left-15px width-100-percent" data-show=".cocreatejs" data-hide=".cocreatejs">
+		    <span>CoCreateJS</span>
+		    <span class="float-right"><i class="fas fa-chevron-down cocreatejs"></i><i class="fas fa-chevron-up cocreatejs hidden"></i></span>
+		  </a>
+		</li>
+			
+		<div class="cocreatejs hidden">
+			<li class="menuItem  padding-left-20px">
+			  <a href="#html_elements">
+			    <span>Realtime HTML Elements</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#realtime_form">
+			    <span>Form</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#realtime_inputs">
+			    <span>Input</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#realtime_checkbox">
+			    <span>Checkbox</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#realtime_select">
+			    <span>Select</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#realtime_textarea">
+			    <span>Textarea</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#realtime_html_tags">
+			    <span>HTML Tags</span>
+			  </a>
+			</li>
+
+			<li class="menuItem  padding-left-20px">
+			  <a href="#crud_object">
+			    <span>CRUD Objects</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#crud_create">
+			    <span>Create</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#crud_read">
+			    <span>Read</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#crud_update">
+			    <span>Update</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#crud_delete">
+			    <span>Delete</span>
+			  </a>
+			</li>
+
+			<li class="menuItem  padding-left-20px">
+			  <a href="#collaboration_object">
+			    <span>Collaboration Objects</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#collaboration_init">
+			    <span>Init</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#collaboration_insert">
+			    <span>Insert</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#collaboration_replace">
+			    <span>replace</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#collaboration_delete">
+			    <span>Delete</span>
+			  </a>
+			</li>
+
+			<li class="menuItem padding-left-20px">
+			  <a href="#dom_editor">
+			    <span>Dom Editor</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#dom_object">
+			    <span>Dom Editor Object</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#dom_object">
+			    <span>Element</span>
+			  </a>
+			</li>
+
+
+			<li class="menuItem padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Cloning</span>
+			  </a>
+			</li>
+			
+			<li class="menuItem padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Drag and Drop</span>
+			  </a>
+			</li>
+			
+			<li class="menuItem padding-left-15px">
+			  <a href="#realtime_tags">
+			    <span>Templating</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#templating">
+			    <span>Filters</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="javascript:void(0)">
+			    <span>results</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="javascript:void(0)">
+			    <span>Use Case</span>
+			  </a>
+			</li>
+			
+			<li class="menuItem padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Logic</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="javascript:void(0)">
+			    <span>Passing Attributtes</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="javascript:void(0)">
+			    <span>Fetching Attributtes</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="javascript:void(0)">
+			    <span>Passing Values</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="javascript:void(0)">
+			    <span>Conditional Logic</span>
+			  </a>
+			</li>
+			
+			<li class="menuItem padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Calculations</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Calculting</span>
+			    </a>
+			  </li>
+
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>User Management</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#register_attr">
+			    <span>Register Attributes</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">			  
+			  <a href="#login_attr">
+			    <span>Login Attributes</span>
+			  </a> 
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#permissions">
+			    <span>Permissions</span>
+			  </a> 
+			</li>
+		</div>
+		
+		<li class="menuItem font-size-20px">
+		  <a class="padding-left-15px width-100-percent" data-show=".cocreatecss" data-hide=".cocreatecss">
+		    <span>CoCreateCSS</span>
+		    <span class="float-right"><i class="fas fa-chevron-down cocreatecss"></i><i class="fas fa-chevron-up cocreatecss hidden"></i></span>
+		  </a>
+		</li>
+		<div id="" class="cocreatecss hidden">
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Nav</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Sidenav</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Floating Label</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Scroll</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Fullscreen</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Helper Classes</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Cards</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Avatar</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Avatar</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Menu Icons</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Parallax</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Splitview</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#user_management">
+			    <span>Introduction</span>
+			  </a> 
+			</li> 
+		</div>
+
+		
+		<li class="menuItem  font-size-20px">
+		  <a class="padding-left-15px width-100-percent" data-show=".modules" data-hide=".modules">
+		    <span>Modules</span>
+		    <span class="float-right"><i class="fas fa-chevron-down modules"></i><i class="fas fa-chevron-up modules hidden"></i></span>
+		  </a>
+		</li>
+		<div class="modules hidden">
+		
+			<li class="menuItem padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Search</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#search_intro">
+			    <span>Introduction</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#search_attr">
+			    <span>Search Attributes</span>
+			  </a>
+			</li>
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Datatables</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			<a href="#window_intro">
+			  <span><i class="fas fa-angle-right"></i></span>
+			  <span>Introduction</span>
+			</a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			  <a href="#form_select">
+			    <span>CoCreate Select</span>
+			  </a>
+			</li>
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Kanban</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#window_intro">
+			      <span>Introduction</span>
+			    </a>
+			  </li>
+			
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Progress Bar</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#window_intro">
+			      <span>Introduction</span>
+			    </a>
+			  </li>
+		</div>
+
+		<li class="menuItem font-size-20px">
+		  <a class="padding-left-15px width-100-percent" data-show=".plugins" data-hide=".plugins">
+		    <span>Plugins</span>
+		    <span class="float-right"><i class="fas fa-chevron-down plugins"></i><i class="fas fa-chevron-up plugins hidden"></i></span>
+		  </a>
+		</li>
+		<div class="plugins hidden">
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Charts</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#window_intro">
+			      <span>Introduction</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Datatable Attributes</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Datatable Views</span>
+			    </a>
+			  </li>
+			  
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Datatables.net</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#window_intro">
+			      <span>Introduction</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Datatable Attributes</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Datatable Views</span>
+			    </a>
+			  </li>
+		
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Full Calendar</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#window_intro">
+			      <span>Introduction</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Calendar Attributes</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Calendar Views</span>
+			    </a>
+			  </li>
+
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Stripe</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#window_intro">
+			      <span>Introduction</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Stripe Attributes</span>
+			    </a>
+			  </li>
+
+			<li class="menuItem margin-top-20px padding-left-20px">
+			  <a href="#realtime_tags">
+			    <span>Google Maps</span>
+			  </a>
+			</li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#window_intro">
+			      <span>Introduction</span>
+			    </a>
+			  </li>
+			<li class="menuItem padding-left-30px">
+			    <a href="#modal_attr">
+			      <span>Map Attributes</span>
+			    </a>
+			  </li>
+		</div>	  
+
+			</ul>
+		</div>
+		<div class="resizeHandler"></div>
+	</div>
+	<script>
+		var config = {
+			apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
+			securityKey: 'f26baf68-e3a9-45fc-effe-502e47116265',
+			organization_Id: '5de0387b12e200ea63204d6c'
+		}
+	</script>
+
+	<!--CoCreateJS-->
+	<script src="https://server.cocreate.app/js/CoCreate.min.js"></script>
+	
+	<script src="https://server.cocreate.app/CoCreate-components/CoCreate-splitview/splitview.js"></script>
+	<!--<script src="https://cdn.cocreate.app/CoCreate.min.js"></script>-->
+
+    <!-- CoCreate CodeMiirror -->
+    <!--<script type="text/javascript" src="https://cdn.cocreate.app/CoCreate-codemirror.js" async></script>-->
+    
+    <!--<script type="text/javascript" src="https://server.cocreate.app/CoCreate-components/CoCreate-fullscreen/src/CoCreate-fullscreen.js" ></script>-->
+    <!--<script src="https://server.cocreate.app/CoCreate-components/CoCreate-modal/src/CoCreate-modal.js"></script> -->
+    
+</body>
+</html>

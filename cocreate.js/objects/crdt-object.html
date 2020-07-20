@@ -1,0 +1,264 @@
+			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding-35px-tb">
+				<h1>CRDT Objects</h1>
+				<p class="max-width-500px margin-bottom-20px">Conflict resolving objects to create collabrative apps.</p>
+
+			    
+		        <a href="#init-crdt-title" id="init-crdt-title" data-show=".init-crdt,.btnshow" data-hide=".init-crdt,.init-crdttoggle,.insert-crdt,.replace-crdt-crdt,.replace-crdt,.get-crdt">
+		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray"><span class="btnshow init-crdttoggle hidden"><i class="fas fa-plus"></i></span><span class="init-crdt"><i class="fas fa-minus"></i></span> Init CRDT</h3>
+		        </a>
+                
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray init-crdt">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>create namespace</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>creates room</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>broadcast or only save to db</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>element</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+	
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+    <code>
+  inintDataCrdt({
+    collection: "module",
+    document_id: "",
+    name: "",
+    element: dom_object,
+    metadata: "xxxx"
+  })
+	</code>
+						</pre>
+					</div>
+				</div>	
+
+			    
+			        <a href="#insert-crdt-title" id="insert-crdt-title" data-show=".insert-crdt,.btnshow" data-hide=".init-crdt,.insert-crdt,.insert-crdttoggle,.replace-crdt-crdt,.replace-crdt,.get-crdt">
+			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="btnshow insert-crdttoggle"><i class="fas fa-plus"></i></span><span class="insert-crdt hidden"><i class="fas fa-minus"></i></span> insert-crdt Document Parameters</h3>
+			        </a>
+			    
+				<div id="insert-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray insert-crdt hidden">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>document_id to insert-crdt from</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+    <code>
+    CoCreate.insertDataCrdt({
+	collection: 'module_activities',
+	document_id: '5e4802ce3ed96d38e71fc7e5',
+	name: 'name',
+	value: 'T',
+	position:'8
+	attributes: {bold: true}
+  })
+
+	</code>
+						</pre>
+					</div>
+				</div>
+
+			    
+			        <a href="#replace-crdt-crdt-crdt-title" id="replace-crdt-crdt-crdt-title" data-show=".replace-crdt-crdt,.btnshow" data-hide=".init-crdt,.insert-crdt,.replace-crdt-crdt,.replace-crdt-crdttoggle,.replace-crdt,.get-crdt">
+			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="btnshow replace-crdt-crdttoggle"><i class="fas fa-plus"></i></span><span class="replace-crdt-crdt hidden"><i class="fas fa-minus"></i></span> replace-crdt-crdt Document Parameters</h3>
+			        </a>
+			    
+				<div id="replace-crdt-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray replace-crdt-crdt hidden">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>create namespace</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>creates room</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>broadcast or only save to db</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Document _id to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+	
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+							
+	<code>
+  CoCreate.replace-crdtDataCrdt({
+  	collection: 'module_activities',
+  	document_id: '5e4802ce3ed96d38e71fc7e5',
+  	name: 'name',
+  	position:8,
+  	length:2,
+  })
+  </code>
+						</pre>
+					</div>
+				</div>
+			    
+			    
+			        <a href="#replace-crdt-title" id="replace-crdt-title" data-show=".replace-crdt,.btnshow" data-hide=".init-crdt,.insert-crdt,.replace-crdt-crdt,.replace-crdt,.replace-crdttoggle,.get-crdt">
+			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="btnshow replace-crdttoggle"><i class="fas fa-plus"></i></span><span class="replace-crdt hidden"><i class="fas fa-minus"></i></span> replace-crdt Document Parameters</h3>
+			         </a>
+		        
+				<div id="replace-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray replace-crdt hidden">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>create namespace</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>creates room</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>broadcast or only save to db</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>element</span> <span class="cocreate-badge success border-bottom border-color-medium-gray">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+	            	<div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+	<code>
+  CoCreate.getDataCrdt({
+  	collection: 'module_activities',
+  	document_id: '5e4802ce3ed96d38e71fc7e5',
+  	name: 'name'
+  })
+	</code>
+						</pre>
+					</div>
+				
+				</div>
+				
+			    
+			        <a href="#get-crdt-title" id="get-crdt-title" data-show=".get-crdt,.btnshow" data-hide=".init-crdt,.insert-crdt,.replace-crdt-crdt,.replace-crdt,.get-crdt,.get-crdttoggle">
+			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="get-crdttoggle btnshow"><i class="fas fa-plus"></i></span><span class="get-crdt hidden"><i class="fas fa-minus"></i></span> insert-crdt Document List Parameters</h3>
+		            </a>
+		        
+				<div id="get-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray get-crdt hidden">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+							<li class="padding-15px-tb  border-bottom border-color-medium-gray">
+				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+	            	<div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+	<code> 
+  replaceDataCrdt({
+    collection: "module",
+    document_id: "",
+    name: "",
+    value: "",
+    replace-crdt-crdt_crud: true | false,
+    element: dom_object,
+    metadata: "xxxx"
+  })
+    </code>
+						</pre>
+					</div>
+				</div>
+				
+			</div>
