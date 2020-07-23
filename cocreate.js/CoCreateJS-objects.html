@@ -4,12 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CoCreateJS Documentation</title>
+        <title>CoCreateJS Objects Documentation</title>
         
         <link rel="icon" type="image/png" sizes="32x32" href="https://cocreate.app/images/favicon.ico">
         
         <!-- CoCreate CSS -->
-        <!--<link rel="stylesheet" href="https://cdn.cocreate.app/CoCreate.min.css" type="text/css" />-->
         <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
         
         <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-splitview/splitview.css" type="text/css" />
@@ -47,444 +46,16 @@
                 </div>
             </div>
             <p class="max-width-500px margin-bottom-20px">Learn how to convert your html into a dynamic realtime application.</p>
-            <div id="xxxxx-section" class="display-flex flex-wrap-wrap justify-content-space-between">
-                <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr margin-20px-tb">
-    
-                    <h2 class="border-bottom border-color-medium-gray padding-5px-tb">Realtime HTML Elements</h2>
-                    <div class="">
-					<p class="padding-top-15px">You will have the option to set realtime as true or false. If data-realtime set to false then the form will require a button to save.</p>
-                <div class="">
-                    <pre>
-                        <code>&lt;button class="submitBtn"&gt; &lt;/button&gt;</code>
-                    </pre>
-                </div>
-                
-					<p>We have 2 collections by default “modules” and “module_activity”. If the data-collection="" is left empty or if the attribute is not used it will default to “module_activity”.</p> 
-                <div class="">
-                    <pre>
-                        <code>&lt;div data-collection='modules | module_activity'&gt; &lt;/div&gt;</code>
-                    </pre>
-                </div>
-					<p>If your logic requires a new collection just add it to the attribute and it will be created if it does not exist. </p>
-                <div class="">
-                    <pre>
-                        <code>&lt;div data-collection='custom collection name'&gt; &lt;/div&gt;</code>
-                    </pre>
-                </div>
-                    </div>
-                <!-- SandBox -->
-			    <div class="container svColumn overflow-hidden card border-radius-2px width-auto height-600px" id="form-sandbox">
-			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
-			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
-			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
-			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
-					<a target="modal" href="module_activity_datatable.html"
-				  	     data-pass_collection="modules"
-				  	     data-pass_document_id=""
-				  	     data-pass_fetch_value=""
-				  	     data-pass_prefix=""
-				  	     data-pass_to="render"
-				  	     data-modal_width="600px"
-				  	     data-modal_height="400px"
-				  	     data-modal_color="#229954"
-				  	     data-modal_header="false"
-				  	     class="margin-right-10px">
-				  	    <i class="fas fa-external-link-alt"></i>
-				     </a>        
-				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
-			        </div>
-			
-			        <div class="svRow">
-			            
-			            <div class="svColumn">
-			            	
-			                <div class="svPanel">
-			                    <div data-realtime="false"
-			                        data-collection="modules"
-			                        data-document_id="5eefe30952c6e94c75fb5e3f"
-			                        name="html" 
-			                        id="7" 
-			                        class="codemirror min-width-300px">
-			                    </div>
-			                </div>
-			            	<div class="svSplitter svHorizontal"> </div>
-			
-			                <div class="svPanel">
-			                    <iframe data-get_value="7" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
-			                </div>
-			                
-			            </div>
-			        </div>
-			    </div>
-			    <!-- End SandBox -->
-
-                    
-			<div id="realtime_forms" class="padding-35px-tb">
-				<h3>Forms</h3>
-				<p>Using your forms with CoCreateJS Realtime CRUD is super easy, Form is used for grouping elements and applying attributes dynamically to it childeren. form tag can be left empty or you can apply attributes you would like to apply to childeren elements. attributtes will only be applied to childeren if the attribute does not already exist. If form realtime false it will require submitBtn</p>
-				<!--<pre>-->
-				<!--	<code>&lt;form data-realtime="true" data-collection="module_activity"&gt;</code>-->
-				<!--</pre>-->
-   
-                <!-- SandBox -->
-			    <div class="container svColumn overflow-hidden card border-radius-2px width-auto height-600px" id="form-sandbox">
-			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
-			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
-			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
-			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
-					<a target="modal" href="module_activity_datatable.html"
-				  	     data-pass_collection="modules"
-				  	     data-pass_document_id=""
-				  	     data-pass_fetch_value=""
-				  	     data-pass_prefix=""
-				  	     data-pass_to="render"
-				  	     data-modal_width="600px"
-				  	     data-modal_height="400px"
-				  	     data-modal_color="#229954"
-				  	     data-modal_header="false"
-				  	     class="margin-right-10px">
-				  	    <i class="fas fa-external-link-alt"></i>
-				     </a>        
-				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
-			        </div>
-			
-			        <div class="svRow">
-			            
-			            <div class="svColumn">
-			            	
-			                <div class="svPanel">
-			                    <div data-realtime="false"
-			                        data-collection="modules"
-			                        data-document_id="5eefe30952c6e94c75fb5e3f"
-			                        name="html" 
-			                        id="testing2" 
-			                        class="codemirror min-width-300px">
-			                    </div>
-			                </div>
-			            	<div class="svSplitter svHorizontal"> </div>
-			
-			                <div class="svPanel">
-			                    <iframe data-get_value="testing2" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
-			                </div>
-			                
-			            </div>
-			        </div>
-			    </div>
-			    <!-- End SandBox -->
-
-			</div>
-			<div id="realtime_inputs" class="padding-35px-tb">
-				<h3>Inputs</h3>
-				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
-				<pre>
-					<code>&lt;input type="text" data-Collection="module_activity" data-document_id="" name="name"&gt;</code>
-				</pre>
-   
-                <!-- SandBox -->
-			    <div class="container svColumn overflow-hidden card border-radius-2px width-auto height-600px" id="form-sandbox">
-			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
-			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
-			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
-			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
-					<a target="modal" href="module_activity_datatable.html"
-				  	     data-pass_collection="modules"
-				  	     data-pass_document_id=""
-				  	     data-pass_fetch_value=""
-				  	     data-pass_prefix=""
-				  	     data-pass_to="render"
-				  	     data-modal_width="600px"
-				  	     data-modal_height="400px"
-				  	     data-modal_color="#229954"
-				  	     data-modal_header="false"
-				  	     class="margin-right-10px">
-				  	    <i class="fas fa-external-link-alt"></i>
-				     </a>        
-				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
-			        </div>
-			
-			        <div class="svRow">
-			            
-			            <div class="svColumn">
-			            	
-			                <div class="svPanel">
-			                    <div data-realtime="false"
-			                        data-collection="modules"
-			                        data-document_id="5eefe30952c6e94c75fb5e3f"
-			                        name="html" 
-			                        id="3" 
-			                        class="codemirror min-width-300px">
-			                    </div>
-			                </div>
-			            	<div class="svSplitter svHorizontal"> </div>
-			
-			                <div class="svPanel">
-			                    <iframe data-get_value="3" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
-			                </div>
-			                
-			            </div>
-			        </div>
-			    </div>
-			    <!-- End SandBox -->
-
-			</div>
-			<div id="realtime_checkbox" class="padding-35px-tb">
-				<h3>Checkbox</h3>
-				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
-				<pre>
-					<code>&lt;input type="checkbox" data-Collection="module_activity" data-document_id="" name="name"&gt;</code>
-				</pre>
-   
-                <!-- SandBox -->
-			    <div class="container svColumn overflow-hidden card border-radius-2px width-auto height-600px" id="form-sandbox">
-			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
-			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
-			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
-			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
-					<a target="modal" href="module_activity_datatable.html"
-				  	     data-pass_collection="modules"
-				  	     data-pass_document_id=""
-				  	     data-pass_fetch_value=""
-				  	     data-pass_prefix=""
-				  	     data-pass_to="render"
-				  	     data-modal_width="600px"
-				  	     data-modal_height="400px"
-				  	     data-modal_color="#229954"
-				  	     data-modal_header="false"
-				  	     class="margin-right-10px">
-				  	    <i class="fas fa-external-link-alt"></i>
-				     </a>        
-				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
-			        </div>
-			
-			        <div class="svRow">
-			            
-			            <div class="svColumn">
-			            	
-			                <div class="svPanel">
-			                    <div data-realtime="false"
-			                        data-collection="modules"
-			                        data-document_id="5eefe30952c6e94c75fb5e3f"
-			                        name="html" 
-			                        id="4" 
-			                        class="codemirror min-width-300px">
-			                    </div>
-			                </div>
-			            	<div class="svSplitter svHorizontal"> </div>
-			
-			                <div class="svPanel">
-			                    <iframe data-get_value="4" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
-			                </div>
-			                
-			            </div>
-			        </div>
-			    </div>
-			    <!-- End SandBox -->
-
-			</div>
-			<div id="realtime_textarea" class="padding-35px-tb">
-				<h3>Textarea</h3>
-				
-                <!-- SandBox -->
-			    <div class="container svColumn overflow-hidden card border-radius-2px width-auto height-600px" id="form-sandbox">
-			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
-			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
-			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
-			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
-					<a target="modal" href="module_activity_datatable.html"
-				  	     data-pass_collection="modules"
-				  	     data-pass_document_id=""
-				  	     data-pass_fetch_value=""
-				  	     data-pass_prefix=""
-				  	     data-pass_to="render"
-				  	     data-modal_width="600px"
-				  	     data-modal_height="400px"
-				  	     data-modal_color="#229954"
-				  	     data-modal_header="false"
-				  	     class="margin-right-10px">
-				  	    <i class="fas fa-external-link-alt"></i>
-				     </a>        
-				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
-			        </div>
-			
-			        <div class="svRow">
-			            
-			            <div class="svColumn">
-			            	
-			                <div class="svPanel">
-			                    <div data-realtime="false"
-			                        data-collection="modules"
-			                        data-document_id="5eefe30952c6e94c75fb5e3f"
-			                        name="html" 
-			                        id="5" 
-			                        class="codemirror min-width-300px">
-			                    </div>
-			                </div>
-			            	<div class="svSplitter svHorizontal"> </div>
-			
-			                <div class="svPanel">
-			                    <iframe data-get_value="5" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
-			                </div>
-			                
-			            </div>
-			        </div>
-			    </div>
-			    <!-- End SandBox -->
-			</div>
-			<div id="realtime_select" class="padding-35px-tb">
-				<h3>Select</h3>
-				<p>Now that you have the form tag in place lets add some new inputs or update your current inputs connecting them to the CoCreateJS.</p>
-				<pre>
-					<code>&lt;select type="text" data-collection="" data-document_id="" name="name"&gt;&lt;/select&gt;</code>
-				</pre>
-                <!-- SandBox -->
-			    <div class="container svColumn overflow-hidden card border-radius-2px width-auto height-600px" id="form-sandbox">
-			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
-			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
-			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
-			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
-					<a target="modal" href="module_activity_datatable.html"
-				  	     data-pass_collection="modules"
-				  	     data-pass_document_id=""
-				  	     data-pass_fetch_value=""
-				  	     data-pass_prefix=""
-				  	     data-pass_to="render"
-				  	     data-modal_width="600px"
-				  	     data-modal_height="400px"
-				  	     data-modal_color="#229954"
-				  	     data-modal_header="false"
-				  	     class="margin-right-10px">
-				  	    <i class="fas fa-external-link-alt"></i>
-				     </a>        
-				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
-			        </div>
-			
-			        <div class="svRow">
-			            
-			            <div class="svColumn">
-			            	
-			                <div class="svPanel">
-			                    <div data-realtime="false"
-			                        data-collection="modules"
-			                        data-document_id="5eefe30952c6e94c75fb5e3f"
-			                        name="html" 
-			                        id="6" 
-			                        class="codemirror min-width-300px">
-			                    </div>
-			                </div>
-			            	<div class="svSplitter svHorizontal"> </div>
-			
-			                <div class="svPanel">
-			                    <iframe data-get_value="6" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
-			                </div>
-			                
-			            </div>
-			        </div>
-			    </div>
-			    <!-- End SandBox -->
-			
-			</div>
-			<div id="realtime_htmltags" class="padding-35px-tb">
-				<h3>HTML Tags</h3>
-				<p></p>
-				<pre>
-					<code>&lt;h1 type="text" data-collection="module_activity" data-document_id="" name="name"&gt;&lt;/h1&gt;</code>
-				</pre>
-                <!-- SandBox -->
-			    <div class="container svColumn overflow-hidden card border-radius-2px width-auto height-600px" id="form-sandbox">
-			       <div class="font-size-20px position-absolute top-10px right-10px opacity-06 z-index-7">
-			        <a class="margin-right-10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
-			        <a class="margin-right-10px hidden" id="code" data-show="code" data-hide="preview"><i class="fas fa-code"></i></a>
-			        <!--<a class="margin-right-10px"><i class="far fa-window-maximize"></i></a>-->
-					<a target="modal" href="module_activity_datatable.html"
-				  	     data-pass_collection="modules"
-				  	     data-pass_document_id=""
-				  	     data-pass_fetch_value=""
-				  	     data-pass_prefix=""
-				  	     data-pass_to="render"
-				  	     data-modal_width="600px"
-				  	     data-modal_height="400px"
-				  	     data-modal_color="#229954"
-				  	     data-modal_header="false"
-				  	     class="margin-right-10px">
-				  	    <i class="fas fa-external-link-alt"></i>
-				     </a>        
-				     <a class="fs-toggle margin-right-5px" target="#playground-1"><i class="fas fa-expand"></i></a>
-			        </div>
-			
-			        <div class="svRow">
-			            
-			            <div class="svColumn">
-			            	
-			                <div class="svPanel">
-			                    <div data-realtime="false"
-			                        data-collection="modules"
-			                        data-document_id="5eefe30952c6e94c75fb5e3f"
-			                        name="html" 
-			                        id="7" 
-			                        class="codemirror min-width-300px">
-			                    </div>
-			                </div>
-			            	<div class="svSplitter svHorizontal"> </div>
-			
-			                <div class="svPanel">
-			                    <iframe data-get_value="7" frameBorder="0" height="100%" width="100%"  class="min-width-300px"></iframe>
-			                </div>
-			                
-			            </div>
-			        </div>
-			    </div>
-			    <!-- End SandBox -->
-			
-			</div>
-
-                </div><!-- end column -->
-                
-                <div class="position-sticky top-0 flex-grow-1 min-width-300px width-50-percent padding-10px-lr padding-bottom-10px margin-20px-tb height-100vh cocreate-scroll">
-                    <h2 class="border-bottom border-color-medium-gray padding-5px-tb">Attributes</h2>
-                    <ul class="list-style-type-none ">
-						<li class="padding-15px-tb border-bottom border-color-medium-gray">
-			        		<h4><span>data-realtime</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
-		        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
-						</li>
-						<li class="padding-15px-tb border-bottom border-color-medium-gray">
-			        		<h4><span>data-collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
-		        			<p>Save data onChange. Default's to true if not appllied.</p>
-						</li>
-						<li class="padding-15px-tb border-bottom border-color-medium-gray">
-			        		<h4><span>data-document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
-		        			<p>Save data onChange. Default's to true if not appllied.</p>
-						</li>
-						<li class="padding-15px-tb border-bottom border-color-medium-gray">
-			        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
-		        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
-						</li>
-						<li class="padding-15px-tb border-bottom border-color-medium-gray">
-			        		<h4><span>data-read_value</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
-		        			<p>Fetch value on page load or when updated. If attribute is empty or not used Default's to true.</p>
-						</li>
-						<li class="padding-15px-tb border-bottom border-color-medium-gray">
-			        		<h4><span>data-save_value</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
-		        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
-						</li>
-						<li class="padding-15px-tb  border-bottom border-color-medium-gray">
-			        		<h4><span>contenteditable</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
-		        			<p>htmltags can be editable</p>
-						</li>
-						<li class="padding-15px-tb border-bottom border-color-medium-gray">
-			        		<h4><span>data-cursors</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
-		        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
-						</li>
-                    </ul>
-                </div>
-            </div>
 			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding-35px-tb">
 				<h1>CRUD Objects</h1>
 				<p class="max-width-500px margin-bottom-20px">Simple objects you can use to create custom components.</p>
 
-			    
-			    
-		        <a href="#create-title" id="create-title" data-show=".create,.crudbtnshow" data-hide=".create,.createtoggle,.read,.update,.delete,.readlist">
-		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray"><span class="crudbtnshow createtoggle hidden"><i class="fas fa-plus"></i></span><span class="create"><i class="fas fa-minus"></i></span> Create Document Parameters</h3>
+		        <a href="#create" id="create" data-show=".create,.crudiconshow" data-hide=".create,.createiconhide,.read,.update,.delete,.readlist">
+		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray">
+		            	<span class="crudiconshow createiconhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="create"><i class="fas fa-minus"></i></span> 
+		            	<span>Create Document Parameters</span>
+		            </h3>
 		        </a>
                 
 				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray create">
@@ -523,7 +94,7 @@
 	
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-    <code>
+  <code>
   CoCreate.createDocument({
     namespace:'',
     room:'',
@@ -538,17 +109,21 @@
     element: “xxxx”,
     metaData: "xxxx"
   }),
-	</code>
+  </code>
 						</pre>
 					</div>
 				</div>	
 
 			    
-			        <a href="#read-title" id="read-title" data-show=".read,.crudbtnshow" data-hide=".create,.read,.readtoggle,.update,.delete,.readlist">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="crudbtnshow readtoggle"><i class="fas fa-plus"></i></span><span class="read hidden"><i class="fas fa-minus"></i></span> Read Document Parameters</h3>
-			        </a>
+		        <a href="#read" id="read" data-show=".read,.crudiconshow" data-hide=".create,.read,.readiconhide,.update,.delete,.readlist">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="crudiconshow readiconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="read hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Read Document Parameters</span>
+		            </h3>
+		        </a>
 			    
-				<div id="read" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray read hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray read hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none padding-right-15px">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -575,7 +150,7 @@
 			        </div>
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-    <code>
+  <code>
   CoCreate.readDocument({
     collection: "module",
     document_id: "",
@@ -586,17 +161,21 @@
     element: “xxxx”,
     metaData: "xxxx"
   }),
-	</code>
+  </code>
 						</pre>
 					</div>
 				</div>
 
 			    
-			        <a href="#update-title" id="update-title" data-show=".update,.crudbtnshow" data-hide=".create,.read,.update,.updatetoggle,.delete,.readlist">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="crudbtnshow updatetoggle"><i class="fas fa-plus"></i></span><span class="update hidden"><i class="fas fa-minus"></i></span> Update Document Parameters</h3>
-			        </a>
+		        <a href="#update-title" id="update-title" data-show=".update,.crudiconshow" data-hide=".create,.read,.update,.updateiconhide,.delete,.readlist">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="crudiconshow updateiconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="update hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Update Document Parameters</span>
+		            </h3>
+		        </a>
 			    
-				<div id="update" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray update hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray update hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -636,8 +215,7 @@
 	
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-							
-	<code>
+  <code>
   CoCreate.updateDocument({
     namespace: '',
     room: '',
@@ -654,17 +232,21 @@
     element: “xxxx”,
     metaData: "xxxx"
   }),
-	</code>
+  </code>
 						</pre>
 					</div>
 				</div>
 			    
 			    
-			        <a href="#delete-title" id="delete-title" data-show=".delete,.crudbtnshow" data-hide=".create,.read,.update,.delete,.deletetoggle,.readlist">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="crudbtnshow deletetoggle"><i class="fas fa-plus"></i></span><span class="delete hidden"><i class="fas fa-minus"></i></span> Delete Document Parameters</h3>
-			         </a>
+		        <a href="#delete-title" id="delete-title" data-show=".delete,.crudiconshow" data-hide=".create,.read,.update,.delete,.deleteiconhide,.readlist">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="crudiconshow deleteiconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="delete hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Delete Document Parameters</span>
+		            </h3>
+		         </a>
 		        
-				<div id="delete" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray delete hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray delete hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none padding-right-15px">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -703,7 +285,7 @@
 			        </div>
 	            	<div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-	<code>
+  <code>
   CoCreate.deleteDocument({
     namespace: '',
     room: '',
@@ -715,18 +297,22 @@
     element: “xxxx”,
     metadata: "xxxx"
   }),
-	</code>
+  </code>
 						</pre>
 					</div>
 				
 				</div>
 				
 			    
-			        <a href="#readlist-title" id="readlist-title" data-show=".readlist,.crudbtnshow" data-hide=".create,.read,.update,.delete,.readlist,.readlisttoggle">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="readlisttoggle crudbtnshow"><i class="fas fa-plus"></i></span><span class="readlist hidden"><i class="fas fa-minus"></i></span> Read Document List Parameters</h3>
-		            </a>
+		        <a href="#readlist" id="readlist" data-show=".readlist,.crudiconshow" data-hide=".create,.read,.update,.delete,.readlist,.readlisticonhide">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="readlisticonhide crudiconshow"><i class="fas fa-plus"></i></span>
+		            	<span class="readlist hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Read Document List Parameters</span>
+		            </h3>
+	            </a>
 		        
-				<div id="readlist" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray readlist hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray readlist hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none padding-right-15px">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -749,7 +335,7 @@
 			        </div>
 	            	<div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-	<code> 
+  <code> 
   CoCreate.readDcoumentList {
     collection: "modules",
     element: "xxxx",
@@ -799,8 +385,12 @@
 				<p class="max-width-500px margin-bottom-20px">Conflict resolving objects to create collabrative apps.</p>
 
 			    
-		        <a href="#init-crdt-title" id="init-crdt-title" data-show=".init-crdt,.crdtbtnshow" data-hide=".init-crdt,.init-crdttoggle,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt">
-		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray"><span class="crdtbtnshow init-crdttoggle hidden"><i class="fas fa-plus"></i></span><span class="init-crdt"><i class="fas fa-minus"></i></span> Init CRDT Parameters</h3>
+		        <a href="#init-crdt" id="init-crdt" data-show=".init-crdt,.crdticonshow" data-hide=".init-crdt,.init-crdticonhide,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt">
+		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray">
+		            	<span class="crdticonshow init-crdticonhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="init-crdt"><i class="fas fa-minus"></i></span> 
+		            	<span>Init CRDT Parameters</span>
+		            </h3>
 		        </a>
                 
 				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray init-crdt">
@@ -839,7 +429,7 @@
 	
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-    <code>
+  <code>
   inintDataCrdt({
     collection: "module",
     document_id: "",
@@ -847,17 +437,21 @@
     element: dom_object,
     metadata: "xxxx"
   })
-	</code>
+  </code>
 						</pre>
 					</div>
 				</div>	
 
 			    
-			        <a href="#insert-crdt-title" id="insert-crdt-title" data-show=".insert-crdt,.crdtbtnshow" data-hide=".init-crdt,.insert-crdt,.insert-crdttoggle,.delete-crdt,.replace-crdt,.get-crdt">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="crdtbtnshow insert-crdttoggle"><i class="fas fa-plus"></i></span><span class="insert-crdt hidden"><i class="fas fa-minus"></i></span> Insert Data CRDT Parameters</h3>
-			        </a>
+		        <a href="#insert-crdt" id="insert-crdt" data-show=".insert-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.insert-crdticonhide,.delete-crdt,.replace-crdt,.get-crdt">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="crdticonshow insert-crdticonhide"><i class="fas fa-plus"></i></span>
+		            	<span class="insert-crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Insert Data CRDT Parameters</span>
+		            </h3>
+		        </a>
 			    
-				<div id="insert-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray insert-crdt hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray insert-crdt hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none padding-right-15px">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -884,8 +478,8 @@
 			        </div>
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-    <code>
-    CoCreate.insertDataCrdt({
+  <code>
+  CoCreate.insertDataCrdt({
 	collection: 'module_activities',
 	document_id: '5e4802ce3ed96d38e71fc7e5',
 	name: 'name',
@@ -893,18 +487,21 @@
 	position:'8
 	attributes: {bold: true}
   })
-
-	</code>
+  </code>
 						</pre>
 					</div>
 				</div>
 
 			    
-			        <a href="#delete-crdt-title" id="delete-crdt-title" data-show=".delete-crdt,.crdtbtnshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.delete-crdttoggle,.replace-crdt,.get-crdt">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="crdtbtnshow delete-crdttoggle"><i class="fas fa-plus"></i></span><span class="delete-crdt hidden"><i class="fas fa-minus"></i></span> Delete Data CRDT Parameters</h3>
-			        </a>
+		        <a href="#delete-crdt" id="delete-crdt" data-show=".delete-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.delete-crdticonhide,.replace-crdt,.get-crdt">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="crdticonshow delete-crdticonhide"><i class="fas fa-plus"></i></span>
+		            	<span class="delete-crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Delete Data CRDT Parameters</span>
+		            </h3>
+		        </a>
 			    
-				<div id="delete-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray delete-crdt hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray delete-crdt hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -945,8 +542,8 @@
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
 							
-	<code>
-  CoCreate.replace-crdtDataCrdt({
+  <code>
+  CoCreate.deleteDataCrdt({
   	collection: 'module_activities',
   	document_id: '5e4802ce3ed96d38e71fc7e5',
   	name: 'name',
@@ -959,11 +556,15 @@
 				</div>
 			    
 			    
-			        <a href="#replace-crdt-title" id="replace-crdt-title" data-show=".replace-crdt,.crdtbtnshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.replace-crdttoggle,.get-crdt">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="crdtbtnshow replace-crdttoggle"><i class="fas fa-plus"></i></span><span class="replace-crdt hidden"><i class="fas fa-minus"></i></span> Replace Data CRDT Parameters</h3>
-			         </a>
+		        <a href="#replace-crdt-title" id="replace-crdt-title" data-show=".replace-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.replace-crdticonhide,.get-crdt">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="crdticonshow replace-crdticonhide"><i class="fas fa-plus"></i></span>
+		            	<span class="replace-crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Replace Data CRDT Parameters</span>
+		            </h3>
+		         </a>
 		        
-				<div id="replace-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray replace-crdt hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray replace-crdt hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none padding-right-15px">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -1002,24 +603,28 @@
 			        </div>
 	            	<div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-	<code>
+  <code>
   CoCreate.getDataCrdt({
   	collection: 'module_activities',
   	document_id: '5e4802ce3ed96d38e71fc7e5',
   	name: 'name'
   })
-	</code>
+  </code>
 						</pre>
 					</div>
 				
 				</div>
 				
 			    
-			        <a href="#get-crdt-title" id="get-crdt-title" data-show=".get-crdt,.crdtbtnshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt,.get-crdttoggle">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="get-crdttoggle crdtbtnshow"><i class="fas fa-plus"></i></span><span class="get-crdt hidden"><i class="fas fa-minus"></i></span> Get Data CRDT Parameters</h3>
-		            </a>
+		        <a href="#get-crdt" id="get-crdt" data-show=".get-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt,.get-crdticonhide">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="get-crdticonhide crdticonshow"><i class="fas fa-plus"></i></span>
+		            	<span class="get-crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Get Data CRDT Parameters</span>
+		            </h3>
+	            </a>
 		        
-				<div id="get-crdt" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray get-crdt hidden">
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray get-crdt hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none padding-right-15px">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -1063,9 +668,9 @@
 				<p class="max-width-500px margin-bottom-20px">Send and receive cursor positions</p>
 
 			    
-		        <a href="#send-cursor-title" id="send-cursor-title" data-show=".send-cursor,.cursorbtnshow" data-hide=".send-cursor,.send-cursortoggle,.get-cursor">
+		        <a href="#send-cursor" id="send-cursor" data-show=".send-cursor,.cursoriconshow" data-hide=".send-cursor,.send-cursoriconhide,.get-cursor">
 		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray">
-		            	<span class="cursorbtnshow send-cursortoggle hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="cursoriconshow send-cursoriconhide hidden"><i class="fas fa-plus"></i></span>
 		            	<span class="send-cursor"><i class="fas fa-minus"></i></span>
 		            	<span> Send Cursor position Parameters</span>
 		            </h3>
@@ -1099,24 +704,28 @@
 	
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-    <code>
-CoCreate.sendPosition({
-      collection:"module_activities",
-      document_id:"5e4802ce3ed96d38e71fc7e5",
-      name:"name",
-      startPosition: 2,
-      endPositon: 2,
-    </code>
+  <code>
+  CoCreate.sendPosition({
+	collection:"module_activities",
+	document_id:"5e4802ce3ed96d38e71fc7e5",
+	name:"name",
+	startPosition: 2,
+	endPositon: 2,
+  )}
+  </code>
 						</pre>
 					</div>
 				</div>	
 
-			    
-			        <a href="#get-cursor-title" id="get-cursor-title" data-show=".get-cursor,.cursorbtnshow" data-hide=".send-cursor,.get-cursor,.get-cursortoggle">
-			            <h3 class="padding-15px-tb border-bottom border-color-medium-gray"><span class="cursorbtnshow get-cursortoggle"><i class="fas fa-plus"></i></span><span class="get-cursor hidden"><i class="fas fa-minus"></i></span> Get Cursor position Parameters</h3>
-			        </a>
-			    
-				<div id="get-cursor" class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray get-cursor hidden">
+		        <a href="#get-cursor" id="get-cursor" data-show=".get-cursor,.cursoriconshow" data-hide=".send-cursor,.get-cursor,.get-cursoriconhide">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="cursoriconshow get-cursoriconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="get-cursor hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Get Cursor position Parameters</span>
+		            </h3>
+		        </a>
+		    
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray get-cursor hidden">
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 			            <ul class="list-style-type-none padding-right-15px">
 							<li class="padding-15px-tb border-bottom border-color-medium-gray">
@@ -1135,10 +744,213 @@ CoCreate.sendPosition({
 			        </div>
 				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
 		            	<pre>
-    <code>
+  <code>
   CoCreate.getPosition(function(data))
+  </code>
+						</pre>
+					</div>
+				</div>
 
-	</code>
+			</div>
+			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding-35px-tb">
+				<h1>Module register</h1>
+				<p class="max-width-500px margin-bottom-20px">Register your components save function to run with form Btn</p>
+
+			    
+		        <a href="#form-registry" id="form-registry" data-show=".form-registry,.cursoriconshow" data-hide=".form-registry,.form-registryiconhide">
+		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray">
+		            	<span class="cursoriconshow form-registryiconhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="form-registry"><i class="fas fa-minus"></i></span>
+		            	<span> Register form Parameters</span>
+		            </h3>
+		        </a>
+                
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray form-registry">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Document _id to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>startPosition</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>endPositon</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+	
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+  <code>
+  CoCreate.registerModule({
+	collection:"module_activities",
+	document_id:"5e4802ce3ed96d38e71fc7e5",
+	name:"name",
+	startPosition: 2,
+	endPositon: 2,
+  )}
+  </code>
+						</pre>
+					</div>
+				</div>	
+
+			</div>
+			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding-35px-tb">
+				<h1>WebSocket Objects</h1>
+				<p class="max-width-500px margin-bottom-20px">Send and listen to messages</p>
+
+			    
+		        <a href="#socket-create" id="socket-create" data-show=".socket-create,.socketiconshow" data-hide=".socket-create,.socket-createiconhide,.socket-send,.socket-listen">
+		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray">
+		            	<span class="socketiconshow socket-createiconhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="socket-create"><i class="fas fa-minus"></i></span> 
+		            	<span>Create Socket Parameters</span>
+		            </h3>
+		        </a>
+                
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray socket-create">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Document _id to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>startPosition</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>endPositon</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+	
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+  <code>
+  CoCreateSocket.create({
+    namespace: '',
+    room: '',
+    broadcast: true/false,
+    broadcast_sender: true/false
+    
+    rooms: [r1, r2],
+    emit: {
+      message': 'function name to trigger',
+      data': 'let's play a game ....'
+    }
+  })
+  </code>
+						</pre>
+					</div>
+				</div>	
+		        <a href="#socket-send" id="socket-send" data-show=".socket-send,.socketiconshow" data-hide=".socket-send,.socket-sendiconhide,.socket-listen">
+		            <h3 class="padding-15px-tb border-top border-bottom border-color-medium-gray">
+		            	<span class="socketiconshow socket-sendiconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="socket-send hidden"><i class="fas fa-minus"></i></span>
+		            	<span> Send Message Parameters</span>
+		            </h3>
+		        </a>
+                
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray socket-send hidden">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Document _id to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>startPosition</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
+							</li>
+							<li class="padding-15px-tb">
+				        		<h4><span>endPositon</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>Additonal data in the form of a string , array or object </p>
+							</li>
+			            </ul>
+			        </div>
+	
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+  <code>
+  CoCreateSocket.send({
+    namespace: '',
+    room: '',
+    broadcast: true/false,
+    broadcast_sender: true/false
+    
+    rooms: [r1, r2],
+    emit: {
+      message': 'function name to trigger',
+      data': 'let's play a game ....'
+    }
+  })
+  </code>
+						</pre>
+					</div>
+				</div>	
+
+		        <a href="#socket-listen" id="socket-listen" data-show=".socket-listen,.socketiconshow" data-hide=".socket-send,.socket-listen,.socket-listeniconhide">
+		            <h3 class="padding-15px-tb border-bottom border-color-medium-gray">
+		            	<span class="socketiconshow socket-listeniconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="socket-listen hidden"><i class="fas fa-minus"></i></span> 
+		            	<span>Listen Message Parameters</span>
+		            </h3>
+		        </a>
+		    
+				<div class="display-flex flex-wrap-wrap border-bottom border-color-medium-gray socket-listen hidden">
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+			            <ul class="list-style-type-none padding-right-15px">
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>collection to save to</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
+			        			<p>document_id to get-cursor from</p>
+							</li>
+							<li class="padding-15px-tb border-bottom border-color-medium-gray">
+				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
+			        			<p>data to save</p>
+							</li>
+			            </ul>
+			        </div>
+				    <div class="flex-grow-1 min-width-300px width-50-percent padding-10px-lr">
+		            	<pre>
+  <code>
+  CoCreateSocket.listen('sendMessage', function(data) {
+	console.log(data);
+  })
+  </code>
 						</pre>
 					</div>
 				</div>
