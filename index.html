@@ -61,7 +61,7 @@
 	<body>
   
 	<!-- Navbar -->
-	<div data-main_content_id="content" class="nav display-flex align-items-center bg-light-gray position-fixed" data-scroll_effect="hide-nav" data-scroll_up="1" data-scroll_down="1">
+	<div data-main_content_id="content" class="nav display:flex align-items-center bg-light-gray position-fixed" data-scroll_effect="hide-nav" data-scroll_up="1" data-scroll_down="1">
 		<!-- Menu Icon Animations -->
 		<a class="nav-toggle menu_icon--Vdots" data-toggle_sidenav="menuL">
 			<div class="circle"></div>
@@ -72,8 +72,8 @@
 		</a>
 
 		<!-- Horizontal Scroll Nav/Tabs -->
-		<ul class="cocreate-scroll display-inline-flex direction-rtl font-size-20px align-items-center list-style-type-none width-100-percent height-50px">
-			<!--<li class="margin-right-15px">-->
+		<ul class="cocreate-scroll display:inline-flex direction:rtl font-size:20px align-items-center list-style-type:none width-100-percent height-50px">
+			<!--<li class="margin-right:15px">-->
 			<!--	<a href="https://cocreate.app/console" >Login / Sign Up</a>-->
 			<!--</li>-->
 			<!-- Window Controls -->
@@ -84,11 +84,11 @@
 			<!--<li><a class="btn-modal-minimize"><i class="far fa-window-minimize">-->
 			<!--  </i></a></li>-->
 			<!-- fullscreen toogle and icon transform-->
-			<li class="margin-right-15px">
+			<li class="margin-right:15px">
 				<a class="fs-toggle"><i data-transform_to="fas fa-compress" class="fas fa-expand"></i></a>
 			</li>
 			<!--Render Builder -->
-			<li class="margin-right-15px">
+			<li class="margin-right:15px">
 				<a data-window_url="../render.html" data-pass_collection="module_activity" data-pass_document_id="5dec38b6189f212c8ebd0158" data-pass_prefix="" data-pass_to="builder" data-window_width="100%">
 					<i class="fas fa-palette"></i>
 					<div data-pass_collection="modules" data-pass_module_id="" data-pass_prefix="" data-pass_to="render" class="sessionBuilderUI_Id"></div>
@@ -99,7 +99,7 @@
 			<!--  </i></a></li>-->
 		</ul>
 			  <!-- Avatar -->
-    	<div class="avatar-wrapper margin-5px-tb margin-right-10px">
+    	<div class="avatar-wrapper margin-5px-tb margin-right:10px">
 			<a class="avatar round" target="modal" href="https://server.cocreate.app/CoCreate-adminUI/user-profile/user-profile.html" 
 				data-pass_collection="modules" 
 				data-pass_prefix="" 
@@ -124,16 +124,16 @@
 		</div>
 	
 	<!-- Main Content with Viewport/Boundaries for windows -->
-	<div class="position-fixed margin-top-50px" data-main_content_id="content" id="modal-viewport"></div>
+	<div class="position-fixed margin-top:50px" data-main_content_id="content" id="modal-viewport"></div>
 
-	<div class="cocreate-container width-auto" data-main_content_id="content">
-		<div class="general-text-view padding-15px padding-top-50px padding-15px-lr">
+	<div class="cocreate-container width:auto" data-main_content_id="content">
+		<div class="general-text-view padding:15px padding-top:50px padding:15px-lr">
 			
 		</div>
 	</div>
 
 	<div id="menuL" class="cocreate-sidenav bg-very-light-gray" data-main_content="content" sidenav-default_desktop="expanded" sidenav-default_tablet="expanded" sidenav-default_phone="offcanvas">
-		<div class="display-flex height-50px bg-medium-light-gray">
+		<div class="display:flex height-50px bg-medium-light-gray">
 			<span class="logo-icon padding-12px-lr">
 				<img data-collection="organizations" data-document_id="" name="logo" data-pass_id="me1234" src="https://server.cocreate.app/images/cocreate.png" height="40px"alt="...">
 			</span>
@@ -143,7 +143,7 @@
         <div class="cocreate-search padding-5px height-50px"> 
         	<form id='menu-search'>
             <input type="text" class="searchInput floating-label browser-default" data-pass_value_to="me1234">
-              <span class="passValueBtn position-relative bottom-28px right-14px float-right font-size-18px">
+              <span class="passValueBtn position:relative bottom-28px right-14px float:right font-size-18px">
                 <a  target="modal" href="template-engine.html"
           			   data-pass_to="me1234" 
           			   data-modal_ajax="false" 
@@ -158,296 +158,296 @@
               </span>
         	</form>
         </div>
-        <div class="padding-right-5px">
-			<ul class="cocreate-menu cocreate-scroll vh-120  margin-right-5px">
+        <div class="padding-right:5px">
+			<ul class="cocreate-menu cocreate-scroll vh-120  margin-right:5px">
 			
-			<!--<li class="menuItem margin-top-20px padding-left-15px font-size-20px">-->
+			<!--<li class="menuItem margin-top:20px padding-left:15px font-size:20px">-->
 			<!--  <a href="#intro">-->
 			<!--    <span>Introduction</span>-->
 			<!--  </a>-->
 			<!--</li>-->
-			<!--<li class="menuItem padding-left-30px">-->
+			<!--<li class="menuItem padding-left:30px">-->
 			<!--  <a href="#cocreatejs">-->
 			<!--    <span><i class="fas fa-angle-right"></i></span>-->
 			<!--    <span>CoCreateJS</span>-->
 			<!--  </a>-->
 			<!--</li>-->
-			<!--<li class="menuItem padding-left-30px">-->
+			<!--<li class="menuItem padding-left:30px">-->
 			<!--  <a href="#cocreatecss">-->
 			<!--    <span><i class="fas fa-angle-right"></i></span>-->
 			<!--    <span>CoCreateCSS</span>-->
 			<!--  </a>-->
 			<!--</li>-->
 			
-		<li class="font-size-20px">
-		  <a class="padding-left-15px width-100-percent" data-show=".gettingstarted" data-hide=".gettingstarted">
+		<li class="font-size:20px">
+		  <a class="padding-left:15px width-100-percent" data-show=".gettingstarted" data-hide=".gettingstarted">
 		    <span>Getting Started</span>
-		    <span class="float-right"><i class="fas fa-chevron-down gettingstarted"></i><i class="fas fa-chevron-up gettingstarted hidden"></i></span>
+		    <span class="float:right"><i class="fas fa-chevron-down gettingstarted"></i><i class="fas fa-chevron-up gettingstarted hidden"></i></span>
 		  </a>
 		</li>
 		<div class="gettingstarted hidden">
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#api_keys">
 			    <span>API Keys</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cdn">
 			    <span>CDN</span>
 			  </a>
 			</li>
 		</div>	
 		
-		<li class="font-size-20px">
-		  <a class="padding-left-15px width-100-percent" data-show=".cocreatejs" data-hide=".cocreatejs">
+		<li class="font-size:20px">
+		  <a class="padding-left:15px width-100-percent" data-show=".cocreatejs" data-hide=".cocreatejs">
 		    <span>CoCreateJS</span>
-		    <span class="float-right"><i class="fas fa-chevron-down cocreatejs"></i><i class="fas fa-chevron-up cocreatejs hidden"></i></span>
+		    <span class="float:right"><i class="fas fa-chevron-down cocreatejs"></i><i class="fas fa-chevron-up cocreatejs hidden"></i></span>
 		  </a>
 		</li>
 			
 		<div class="cocreatejs hidden">
-			<li class="menuItem  padding-left-20px">
+			<li class="menuItem  padding-left:20px">
 			  <a href="./CoCreateJS">
 			    <span>Realtime HTML Elements</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#realtime_form">
 			    <span>Form</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#realtime_inputs">
 			    <span>Input</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#realtime_checkbox">
 			    <span>Checkbox</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#realtime_select">
 			    <span>Select</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#realtime_textarea">
 			    <span>Textarea</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#realtime_html_tags">
 			    <span>HTML Tags</span>
 			  </a>
 			</li>
 
-			<li class="menuItem  padding-left-20px">
+			<li class="menuItem  padding-left:20px">
 			  <a href="#crud_object">
 			    <span>CRUD Objects</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#crud_create">
 			    <span>Create</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#crud_read">
 			    <span>Read</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#crud_update">
 			    <span>Update</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#crud_delete">
 			    <span>Delete</span>
 			  </a>
 			</li>
 
-			<li class="menuItem  padding-left-20px">
+			<li class="menuItem  padding-left:20px">
 			  <a href="#collaboration_object">
 			    <span>Collaboration Objects</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#collaboration_init">
 			    <span>Init</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#collaboration_insert">
 			    <span>Insert</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#collaboration_replace">
 			    <span>Replace</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#collaboration_delete">
 			    <span>Delete</span>
 			  </a>
 			</li>
 
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#dom_editor">
 			    <span>Dom Editor</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#dom_object">
 			    <span>Dom Editor Object</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#dom_object">
 			    <span>Element</span>
 			  </a>
 			</li>
 
 
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Cloning</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Drag and Drop</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-15px">
+			<li class="menuItem padding-left:15px">
 			  <a href="#realtime_tags">
 			    <span>Templating</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#templating">
 			    <span>Filters</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="javascript:void(0)">
 			    <span>results</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="javascript:void(0)">
 			    <span>Use Case</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Logic</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="javascript:void(0)">
 			    <span>Passing Attributtes</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="javascript:void(0)">
 			    <span>Fetching Attributtes</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="javascript:void(0)">
 			    <span>Passing Values</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="javascript:void(0)">
 			    <span>Conditional Logic</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Calculations</span>
 			  </a>
 			</li>
 
-			<li class="menuItem margin-top-20px padding-left-20px">
+			<li class="menuItem margin-top:20px padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>User Management</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#register_attr">
 			    <span>Register Attributes</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">			  
+			<li class="menuItem padding-left:30px">			  
 			  <a href="#login_attr">
 			    <span>Login Attributes</span>
 			  </a> 
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#permissions">
 			    <span>Permissions</span>
 			  </a> 
 			</li>
 
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-checkout">
 			    <span>Checkout</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-clone">
 			    <span>Clone</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-compiler">
 			    <span>Compiler</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-image">
 			    <span>Image</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-progress">
 			    <span>Progress</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-render">
 			    <span>Render</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-room">
 			    <span>Room</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-social-share">
 			    <span>Social Share</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-users">
 			    <span>Users</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-vdom">
 			    <span>VDOM</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-website">
 			    <span>Website</span>
 			  </a>
@@ -455,103 +455,103 @@
 
 		</div>
 		
-		<li class="font-size-20px">
-		  <a class="padding-left-15px width-100-percent" data-show=".cocreatecss" data-hide=".cocreatecss">
+		<li class="font-size:20px">
+		  <a class="padding-left:15px width-100-percent" data-show=".cocreatecss" data-hide=".cocreatecss">
 		    <span>CoCreateCSS</span>
-		    <span class="float-right"><i class="fas fa-chevron-down cocreatecss"></i><i class="fas fa-chevron-up cocreatecss hidden"></i></span>
+		    <span class="float:right"><i class="fas fa-chevron-down cocreatecss"></i><i class="fas fa-chevron-up cocreatecss hidden"></i></span>
 		  </a>
 		</li>
 		<div id="" class="cocreatecss hidden">
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="./CoCreateCSS/helper.html">
 			    <span>Helper Classes</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Nav</span>
 			  </a>
 			</li>
 
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Sidenav</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Modal</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Floating Label</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Scroll</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Fullscreen</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Cards</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Avatar</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Menu Icons</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Parallax</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Splitview</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-overlay-scroll">
 			    <span>Overlay Scroll</span>
 			  </a>
 			</li>
 
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-flip-item">
 			    <span>Flip Item</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-icon-transform">
 			    <span>Icon Transform</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-random">
 			    <span>Random Color</span>
 			  </a>
@@ -560,50 +560,50 @@
 		</div>
 
 		
-		<li class="font-size-20px">
-		  <a class="padding-left-15px width-100-percent" data-show=".modules" data-hide=".modules">
+		<li class="font-size:20px">
+		  <a class="padding-left:15px width-100-percent" data-show=".modules" data-hide=".modules">
 		    <span>Modules</span>
-		    <span class="float-right"><i class="fas fa-chevron-down modules"></i><i class="fas fa-chevron-up modules hidden"></i></span>
+		    <span class="float:right"><i class="fas fa-chevron-down modules"></i><i class="fas fa-chevron-up modules hidden"></i></span>
 		  </a>
 		</li>
 		<div class="modules hidden">
 		
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Search</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#search_attr">
 			    <span>Search Attributes</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Datatables</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			  <a href="#form_select">
 			    <span>CoCreate Select</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Kanban</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Progress Bar</span>
 			  </a>
 			</li>
 			
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#cocreate-email">
 			    <span>E-mail</span>
 			  </a>
@@ -611,78 +611,78 @@
 			
 		</div>
 
-		<li class="font-size-20px">
-		  <a class="padding-left-15px width-100-percent" data-show=".plugins" data-hide=".plugins">
+		<li class="font-size:20px">
+		  <a class="padding-left:15px width-100-percent" data-show=".plugins" data-hide=".plugins">
 		    <span>Plugins</span>
-		    <span class="float-right"><i class="fas fa-chevron-down plugins"></i><i class="fas fa-chevron-up plugins hidden"></i></span>
+		    <span class="float:right"><i class="fas fa-chevron-down plugins"></i><i class="fas fa-chevron-up plugins hidden"></i></span>
 		  </a>
 		</li>
 		<div class="plugins hidden">
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Charts</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Datatable Attributes</span>
 			    </a>
 			  </li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Datatable Views</span>
 			    </a>
 			  </li>
 			  
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Datatables.net</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Datatable Attributes</span>
 			    </a>
 			  </li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Datatable Views</span>
 			    </a>
 			  </li>
 		
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Full Calendar</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Calendar Attributes</span>
 			    </a>
 			  </li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Calendar Views</span>
 			    </a>
 			  </li>
 
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Stripe</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Stripe Attributes</span>
 			    </a>
 			  </li>
 
-			<li class="menuItem padding-left-20px">
+			<li class="menuItem padding-left:20px">
 			  <a href="#realtime_tags">
 			    <span>Google Maps</span>
 			  </a>
 			</li>
-			<li class="menuItem padding-left-30px">
+			<li class="menuItem padding-left:30px">
 			    <a href="#modal_attr">
 			      <span>Map Attributes</span>
 			    </a>
