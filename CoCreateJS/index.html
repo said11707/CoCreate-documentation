@@ -438,9 +438,9 @@
 
                 </div><!-- end column -->
                 
-                <div class="position:sticky top:0 flex-grow-1 min-width:300px width:50% padding:10px-lr padding-bottom:10px margin:20px-tb height:100vh cocreate-scroll">
+                <div class="flex-grow-1 min-width:300px width:50% padding:10px-lr padding-bottom:10px margin:20px-tb">
                     <h2 class="border-bottom border-color:medium-gray padding:5px-tb">CRUD Attributes</h2>
-                    <ul class="list-style-type:none ">
+                    <ul class="list-style-type:none position:sticky top:0 cocreate-scroll height:100vh">
 						<li class="padding:15px-tb border-bottom border-color:medium-gray">
 			        		<h4><span>data-realtime</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 		        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
@@ -496,7 +496,7 @@
     			    <!-- End description -->
     			    
                     <!-- SandBox -->
-                    <h2 class="border-bottom border-color:medium-gray padding:5px-tb margin-bottom:15px">Demo</h2>
+                    <h2 class="border-bottom border-color:medium-gray padding:5px-tb">Demo</h2>
     			    <div class="container svColumn overflow:hidden card border-radius:2px width:auto height:600px" id="form-sandbox">
     			       <div class="font-size:20px position:absolute top:10px right:10px opacity:0.6 z-index:7">
     			        <a class="margin-right:10px" id="preview" data-show="preview" data-hide="code"><i class="far fa-eye"></i></a>
@@ -541,13 +541,14 @@
     			        </div>
     			    </div>
     			    <!-- End SandBox -->
+    			    </div>
                 </div>
                 
-                <div class="position:sticky top:0 flex-grow-1 min-width:300px width:50% padding:10px-lr margin:20px-tb border-bottom border-color:medium-gray height:fit-content">
+                <div class="flex-grow-1 min-width:300px width:50% padding:10px-lr margin:20px-tb border-bottom border-color:medium-gray">
     			    
     			    <!-- Atrributes -->
                     <h2 class="border-bottom border-color:medium-gray padding:5px-tb">Websocket Attributes</h2>
-                    <ul class="list-style-type:none ">
+                    <ul class="list-style-type:none position:sticky top:0 padding:15px-tb height:100vh">
                         <li class="padding:15px-tb border-bottom border-color:medium-gray">
                             <h4><span>data-namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
                             <p>room-attribute</p>
