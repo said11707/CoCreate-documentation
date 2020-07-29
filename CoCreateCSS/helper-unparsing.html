@@ -5,25 +5,55 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>CoCreate-helper Documentation | CoCreateCSS</title>
+        <link rel="stylesheet" href="./test.css" type="text/css" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://cocreate.app/images/favicon.ico">
         <meta name="description" content="Utility first css framework, design faster and improve on your css by using native inline styles as classes. No learning curve, use what you already know" />
         <meta name="keywords" content="helper classes, utility classes, css framework, css library, inline style classes" />
         <meta name="robots" content="index,follow" />
         
         <!-- CoCreate CSS -->
-        <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
+        <!--<link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />-->
         
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    -->
         
         <!-- Codemirror -->
-        <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-codemirror/src/CoCreate-codemirror.css" type="text/css" />
-        <link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>
+        <!--<link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-codemirror/src/CoCreate-codemirror.css" type="text/css" />-->
+        <!--<link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>-->
 
         <!-- Highlight.js-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">-->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+        <script type="text/javascript">
+        let myStyle = document.styleSheets[0];
+        let colors = ["red", "blue", "green", "magenta", "cyan", "yellow", "gray", "black"];
+        for (let color of colors) {
+            myStyle.insertRule(`.color\\:${color}{color:${color}}`);
+        }
+        for (let px = 0; px < 1600; px++) {
+            myStyle.insertRule(`.padding\\:${px}px{padding:${px}px}`);
+            myStyle.insertRule(`.padding\\:${px}px-tb{padding-top:${px}px;padding-bottom:${px}px}`);
+            myStyle.insertRule(`.padding\\:${px}px-lr{padding-left:${px}px;padding-right:${px}px}`);
+            myStyle.insertRule(`.padding-top\\:${px}px{padding-top:${px}px}`);
+            myStyle.insertRule(`.padding-bottom\\:${px}px{padding-bottom:${px}px}`);
+            myStyle.insertRule(`.padding-left\\:${px}px{padding-left:${px}px}`);
+            myStyle.insertRule(`.padding-right\\:${px}px{padding-right:${px}px}`);
+            myStyle.insertRule(`.margin\\:${px}px{margin:${px}px}`);
+            myStyle.insertRule(`.margin\\:${px}px-tb{margin-top:${px}px;margin-bottom:${px}px}`);
+            myStyle.insertRule(`.margin\\:${px}px-lr{margin-left:${px}px;margin-right:${px}px}`);
+            myStyle.insertRule(`.margin-top\\:${px}px{margin-top:${px}px}`);
+            myStyle.insertRule(`.margin-bottom\\:${px}px{margin-bottom:${px}px}`);
+            myStyle.insertRule(`.margin-left\\:${px}px{margin-left:${px}px}`);
+            myStyle.insertRule(`.margin-right\\:${px}px{margin-right:${px}px}`);
+            myStyle.insertRule(`.width\\:${px}px{width:${px}px}`);
+            myStyle.insertRule(`.height\\:${px}px{height:${px}px}`);
+            myStyle.insertRule(`.top\\:${px}px{top:${px}px}`);
+            myStyle.insertRule(`.bottom\\:${px}px{bottom:${px}px}`);
+            myStyle.insertRule(`.left\\:${px}px{left:${px}px}`);
+            myStyle.insertRule(`.right\\:${px}px{right:${px}px}`);
+        }
+        </script>
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
     

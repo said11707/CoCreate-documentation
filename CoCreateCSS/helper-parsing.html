@@ -11,17 +11,17 @@
         <meta name="robots" content="index,follow" />
         
         <!-- CoCreate CSS -->
+        <link rel="stylesheet" href="./test.css" type="text/css" />
         <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
-        
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
         
         <!-- Codemirror -->
-        <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-codemirror/src/CoCreate-codemirror.css" type="text/css" />
-        <link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>
+        <!--<link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-codemirror/src/CoCreate-codemirror.css" type="text/css" />-->
+        <!--<link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>-->
 
         <!-- Highlight.js-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">-->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
@@ -776,6 +776,25 @@
                 </div>
             </div>
         </div>
+        
+        <!--<script src="./parsing.js"></script>-->
+       
+      <script type="text/javascript">
+            
+         let myStyle = document.styleSheets[0];
+         let elements = document.querySelectorAll("[class]");
+         let classlist = [];
+         let re = /.+:.+/;
+         for (let element of elements) {
+             for (let classname of element.classList) {
+                 if (re.exec(classname)) {
+                     // classlist.push(classname);
+                     let res = classname.split(":");
+                     myStyle.insertRule(`.${res[0]}\\:${res[1]}{${res[0]}:${res[1]}}`);
+                 }
+             }
+         }
+        </script>
         <script>
             var config = {
                 apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
