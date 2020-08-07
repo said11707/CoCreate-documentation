@@ -46,12 +46,12 @@
                 </div>
             </div>
             <p class="max-width:500px margin-bottom:20px">Learn how to convert your html into a dynamic realtime application.</p>
-			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding:35px-tb">
+			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding:35px_0px">
 				<h1>CRUD Objects</h1>
 				<p class="max-width:500px margin-bottom:20px">Simple objects you can use to create custom components.</p>
 
 		        <a href="#create" id="create" data-show=".create,.crudiconshow" data-hide=".create,.createiconhide,.read,.update,.delete,.readlist">
-		            <h3 class="padding:15px-tb border-top border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
 		            	<span class="crudiconshow createiconhide hidden"><i class="fas fa-plus"></i></span>
 		            	<span class="create"><i class="fas fa-minus"></i></span> 
 		            	<span>Create Document Parameters</span>
@@ -59,40 +59,40 @@
 		        </a>
                 
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray create">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>create namespace</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>creates room</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>broadcast or only save to db</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.createDocument({
@@ -116,7 +116,7 @@
 
 			    
 		        <a href="#read" id="read" data-show=".read,.crudiconshow" data-hide=".create,.read,.readiconhide,.update,.delete,.readlist">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="crudiconshow readiconhide"><i class="fas fa-plus"></i></span>
 		            	<span class="read hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Read Document Parameters</span>
@@ -124,31 +124,31 @@
 		        </a>
 			    
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray read hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>document_id to read from</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.readDocument({
@@ -168,7 +168,7 @@
 
 			    
 		        <a href="#update-title" id="update-title" data-show=".update,.crudiconshow" data-hide=".create,.read,.update,.updateiconhide,.delete,.readlist">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="crudiconshow updateiconhide"><i class="fas fa-plus"></i></span>
 		            	<span class="update hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Update Document Parameters</span>
@@ -176,44 +176,44 @@
 		        </a>
 			    
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray update hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>create namespace</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>creates room</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>broadcast or only save to db</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Document _id to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.updateDocument({
@@ -239,7 +239,7 @@
 			    
 			    
 		        <a href="#delete-title" id="delete-title" data-show=".delete,.crudiconshow" data-hide=".create,.read,.update,.delete,.deleteiconhide,.readlist">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="crudiconshow deleteiconhide"><i class="fas fa-plus"></i></span>
 		            	<span class="delete hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Delete Document Parameters</span>
@@ -247,43 +247,43 @@
 		         </a>
 		        
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray delete hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>create namespace</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>creates room</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>broadcast or only save to db</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>element</span> <span class="cocreate-badge success border-bottom border-color:medium-gray">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
-	            	<div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+	            	<div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.deleteDocument({
@@ -305,7 +305,7 @@
 				
 			    
 		        <a href="#readlist" id="readlist" data-show=".readlist,.crudiconshow" data-hide=".create,.read,.update,.delete,.readlist,.readlisticonhide">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="readlisticonhide crudiconshow"><i class="fas fa-plus"></i></span>
 		            	<span class="readlist hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Read Document List Parameters</span>
@@ -313,27 +313,27 @@
 	            </a>
 		        
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray readlist hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb  border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px  border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
-	            	<div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+	            	<div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code> 
   CoCreate.readDcoumentList {
@@ -380,13 +380,13 @@
 				</div>
 				
 			</div>
-			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding:35px-tb">
+			<div data-collection="" data-document_id="" name="" id="crud_objects" class="padding:35px_0px">
 				<h1>CRDT Objects</h1>
 				<p class="max-width:500px margin-bottom:20px">Conflict resolving objects to create collabrative apps.</p>
 
 			    
 		        <a href="#init-crdt" id="init-crdt" data-show=".init-crdt,.crdticonshow" data-hide=".init-crdt,.init-crdticonhide,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt">
-		            <h3 class="padding:15px-tb border-top border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
 		            	<span class="crdticonshow init-crdticonhide hidden"><i class="fas fa-plus"></i></span>
 		            	<span class="init-crdt"><i class="fas fa-minus"></i></span> 
 		            	<span>Init CRDT Parameters</span>
@@ -394,40 +394,40 @@
 		        </a>
                 
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray init-crdt">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>create namespace</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>creates room</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>broadcast or only save to db</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   inintDataCrdt({
@@ -444,7 +444,7 @@
 
 			    
 		        <a href="#insert-crdt" id="insert-crdt" data-show=".insert-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.insert-crdticonhide,.delete-crdt,.replace-crdt,.get-crdt">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="crdticonshow insert-crdticonhide"><i class="fas fa-plus"></i></span>
 		            	<span class="insert-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Insert Data CRDT Parameters</span>
@@ -452,31 +452,31 @@
 		        </a>
 			    
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray insert-crdt hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>document_id to insert-crdt from</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.insertDataCrdt({
@@ -494,7 +494,7 @@
 
 			    
 		        <a href="#delete-crdt" id="delete-crdt" data-show=".delete-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.delete-crdticonhide,.replace-crdt,.get-crdt">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="crdticonshow delete-crdticonhide"><i class="fas fa-plus"></i></span>
 		            	<span class="delete-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Delete Data CRDT Parameters</span>
@@ -502,44 +502,44 @@
 		        </a>
 			    
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray delete-crdt hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>create namespace</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>creates room</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>broadcast or only save to db</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Document _id to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
 							
   <code>
@@ -557,7 +557,7 @@
 			    
 			    
 		        <a href="#replace-crdt-title" id="replace-crdt-title" data-show=".replace-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.replace-crdticonhide,.get-crdt">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="crdticonshow replace-crdticonhide"><i class="fas fa-plus"></i></span>
 		            	<span class="replace-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Replace Data CRDT Parameters</span>
@@ -565,43 +565,43 @@
 		         </a>
 		        
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray replace-crdt hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>namespace</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>create namespace</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>rooms</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>creates room</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>broadcast</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>broadcast or only save to db</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>element</span> <span class="cocreate-badge success border-bottom border-color:medium-gray">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
-	            	<div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+	            	<div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.getDataCrdt({
@@ -617,7 +617,7 @@
 				
 			    
 		        <a href="#get-crdt" id="get-crdt" data-show=".get-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt,.get-crdticonhide">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="get-crdticonhide crdticonshow"><i class="fas fa-plus"></i></span>
 		            	<span class="get-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Get Data CRDT Parameters</span>
@@ -625,27 +625,27 @@
 	            </a>
 		        
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray get-crdt hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
-							<li class="padding:15px-tb  border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px  border-bottom border-color:medium-gray">
 				        		<h4><span>element</span> <span class="cocreate-badge success">boolean</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>metaData</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
-	            	<div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+	            	<div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
 	<code> 
   replaceDataCrdt({
@@ -663,13 +663,13 @@
 				</div>
 				
 			</div>
-			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px-tb">
+			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px_0px">
 				<h1>Cursor Objects</h1>
 				<p class="max-width:500px margin-bottom:20px">Send and receive cursor positions</p>
 
 			    
 		        <a href="#send-cursor" id="send-cursor" data-show=".send-cursor,.cursoriconshow" data-hide=".send-cursor,.send-cursoriconhide,.get-cursor">
-		            <h3 class="padding:15px-tb border-top border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
 		            	<span class="cursoriconshow send-cursoriconhide hidden"><i class="fas fa-plus"></i></span>
 		            	<span class="send-cursor"><i class="fas fa-minus"></i></span>
 		            	<span> Send Cursor position Parameters</span>
@@ -677,32 +677,32 @@
 		        </a>
                 
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray send-cursor">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Document _id to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>startPosition</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>endPositon</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.sendPosition({
@@ -718,7 +718,7 @@
 				</div>	
 
 		        <a href="#get-cursor" id="get-cursor" data-show=".get-cursor,.cursoriconshow" data-hide=".send-cursor,.get-cursor,.get-cursoriconhide">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="cursoriconshow get-cursoriconhide"><i class="fas fa-plus"></i></span>
 		            	<span class="get-cursor hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Get Cursor position Parameters</span>
@@ -726,23 +726,23 @@
 		        </a>
 		    
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray get-cursor hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>document_id to get-cursor from</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
 			            </ul>
 			        </div>
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.getPosition(function(data))
@@ -752,13 +752,13 @@
 				</div>
 
 			</div>
-			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px-tb">
+			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px_0px">
 				<h1>Module register</h1>
 				<p class="max-width:500px margin-bottom:20px">Register your components save function to run with form Btn</p>
 
 			    
 		        <a href="#form-registry" id="form-registry" data-show=".form-registry,.cursoriconshow" data-hide=".form-registry,.form-registryiconhide">
-		            <h3 class="padding:15px-tb border-top border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
 		            	<span class="cursoriconshow form-registryiconhide hidden"><i class="fas fa-plus"></i></span>
 		            	<span class="form-registry"><i class="fas fa-minus"></i></span>
 		            	<span> Register form Parameters</span>
@@ -766,32 +766,32 @@
 		        </a>
                 
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray form-registry">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Document _id to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>startPosition</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>endPositon</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreate.registerModule({
@@ -807,13 +807,13 @@
 				</div>	
 
 			</div>
-			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px-tb">
+			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px_0px">
 				<h1>WebSocket Objects</h1>
 				<p class="max-width:500px margin-bottom:20px">Send and listen to messages</p>
 
 			    
 		        <a href="#socket-create" id="socket-create" data-show=".socket-create,.socketiconshow" data-hide=".socket-create,.socket-createiconhide,.socket-send,.socket-listen">
-		            <h3 class="padding:15px-tb border-top border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
 		            	<span class="socketiconshow socket-createiconhide hidden"><i class="fas fa-plus"></i></span>
 		            	<span class="socket-create"><i class="fas fa-minus"></i></span> 
 		            	<span>Create Socket Parameters</span>
@@ -821,32 +821,32 @@
 		        </a>
                 
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-create">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Document _id to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>startPosition</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>endPositon</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreateSocket.create({
@@ -866,7 +866,7 @@
 					</div>
 				</div>	
 		        <a href="#socket-send" id="socket-send" data-show=".socket-send,.socketiconshow" data-hide=".socket-send,.socket-sendiconhide,.socket-listen">
-		            <h3 class="padding:15px-tb border-top border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
 		            	<span class="socketiconshow socket-sendiconhide"><i class="fas fa-plus"></i></span>
 		            	<span class="socket-send hidden"><i class="fas fa-minus"></i></span>
 		            	<span> Send Message Parameters</span>
@@ -874,32 +874,32 @@
 		        </a>
                 
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-send hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>collection</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Document _id to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>name</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>Save data onChange. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>startPosition</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Save data onChange/submitBtn. If attribute is empty or not used Default's to true.</p>
 							</li>
-							<li class="padding:15px-tb">
+							<li class="padding:15px_0px">
 				        		<h4><span>endPositon</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge success">array</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>Additonal data in the form of a string , array or object </p>
 							</li>
 			            </ul>
 			        </div>
 	
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreateSocket.send({
@@ -920,7 +920,7 @@
 				</div>	
 
 		        <a href="#socket-listen" id="socket-listen" data-show=".socket-listen,.socketiconshow" data-hide=".socket-send,.socket-listen,.socket-listeniconhide">
-		            <h3 class="padding:15px-tb border-bottom border-color:medium-gray">
+		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
 		            	<span class="socketiconshow socket-listeniconhide"><i class="fas fa-plus"></i></span>
 		            	<span class="socket-listen hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Listen Message Parameters</span>
@@ -928,23 +928,23 @@
 		        </a>
 		    
 				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-listen hidden">
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">string</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>collection to save to</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>document_id</span> <span class="cocreate-badge success">_id</span> <span class="cocreate-badge danger">required</span></h4>
 			        			<p>document_id to get-cursor from</p>
 							</li>
-							<li class="padding:15px-tb border-bottom border-color:medium-gray">
+							<li class="padding:15px_0px border-bottom border-color:medium-gray">
 				        		<h4><span>data</span> <span class="cocreate-badge success">object</span> <span class="cocreate-badge warning">optional</span></h4>
 			        			<p>data to save</p>
 							</li>
 			            </ul>
 			        </div>
-				    <div class="flex-grow:1 min-width:300px width:50% padding:10px-lr">
+				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
   CoCreateSocket.listen('sendMessage', function(data) {
