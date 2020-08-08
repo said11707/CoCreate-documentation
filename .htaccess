@@ -1,1 +1,4 @@
-Redirect https://cocreate.app/documentation/helper.html https://cocreate.app/documentation/CoCreateCSS/helper.html
+RewriteEngine on
+#RewriteRule ^CoCreateCSS/(.*)$ /documentation/$1 [R=301,NC,L]
+Redirect 301 /documentation/flip-item.html /documentation/CoCreateCSS/flip-item.html
+Redirect 301 /documentation/avatar.html /documentation/CoCreateCSS/avatar.html
