@@ -384,15 +384,15 @@
 				<p class="max-width:500px margin-bottom:20px">Conflict resolving objects to create collabrative apps.</p>
 
 			    
-		        <a href="#init-crdt" id="init-crdt" data-show=".init-crdt,.crdtplusicon" data-hide=".init-crdt,.crdt">
+		        <a href="#init-crdt" id="init-crdt" data-show=".init-crdt,.crdticonshow" data-hide=".init-crdt,.init-crdticonhide,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt">
 		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
-		            	<span class="init-crdt crdtplusicon hidden"><i class="fas fa-plus"></i></span>
-		            	<span class="init-crdt crdt"><i class="fas fa-minus"></i></span> 
+		            	<span class="crdticonshow init-crdticonhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="init-crdt"><i class="fas fa-minus"></i></span> 
 		            	<span>Init CRDT Parameters</span>
 		            </h3>
 		        </a>
                 
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray init-crdt crdt">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray init-crdt">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -442,15 +442,15 @@
 				</div>	
 
 			    
-		        <a href="#insert-crdt" id="insert-crdt" data-show=".insert-crdt,.crdtplusicon" data-hide=".insert-crdt,.crdt">
+		        <a href="#insert-crdt" id="insert-crdt" data-show=".insert-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.insert-crdticonhide,.delete-crdt,.replace-crdt,.get-crdt">
 		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
-		            	<span class="insert-crdt crdtplusicon"><i class="fas fa-plus"></i></span>
-		            	<span class="insert-crdt crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span class="crdticonshow insert-crdticonhide"><i class="fas fa-plus"></i></span>
+		            	<span class="insert-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Insert Data CRDT Parameters</span>
 		            </h3>
 		        </a>
 			    
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray insert-crdt crdt hidden">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray insert-crdt hidden">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -492,15 +492,15 @@
 				</div>
 
 			    
-		        <a href="#delete-crdt" id="delete-crdt" data-show=".delete-crdt,.crdtplusicon" data-hide=".delete-crdt,.crdt">
+		        <a href="#delete-crdt" id="delete-crdt" data-show=".delete-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.delete-crdticonhide,.replace-crdt,.get-crdt">
 		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
-		            	<span class="delete-crdt crdtplusicon"><i class="fas fa-plus"></i></span>
-		            	<span class="delete-crdt crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span class="crdticonshow delete-crdticonhide"><i class="fas fa-plus"></i></span>
+		            	<span class="delete-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Delete Data CRDT Parameters</span>
 		            </h3>
 		        </a>
 			    
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray delete-crdt crdt hidden">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray delete-crdt hidden">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -555,15 +555,15 @@
 				</div>
 			    
 			    
-		        <a href="#replace-crdt-title" id="replace-crdt-title" data-show=".replace-crdt,.crdtplusicon" data-hide=".replace-crdt,.crdt">
+		        <a href="#replace-crdt-title" id="replace-crdt-title" data-show=".replace-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.replace-crdticonhide,.get-crdt">
 		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
-		            	<span class="replace-crdt crdtplusicon"><i class="fas fa-plus"></i></span>
-		            	<span class="replace-crdt crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span class="crdticonshow replace-crdticonhide"><i class="fas fa-plus"></i></span>
+		            	<span class="replace-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Replace Data CRDT Parameters</span>
 		            </h3>
 		         </a>
 		        
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray replace-crdt crdt hidden">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray replace-crdt hidden">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -603,14 +603,10 @@
 	            	<div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
   <code>
-  replaceDataCrdt({
-    collection: "module",
-    document_id: "",
-    name: "",
-    value: "",
-    delete-crdt_crud: true | false,
-    element: dom_object,
-    metadata: "xxxx"
+  CoCreate.getDataCrdt({
+  	collection: 'module_activities',
+  	document_id: '5e4802ce3ed96d38e71fc7e5',
+  	name: 'name'
   })
   </code>
 						</pre>
@@ -619,15 +615,15 @@
 				</div>
 				
 			    
-		        <a href="#get-crdt" id="get-crdt" data-show=".get-crdt,.crdtplusicon" data-hide=".get-crdt,.crdt">
+		        <a href="#get-crdt" id="get-crdt" data-show=".get-crdt,.crdticonshow" data-hide=".init-crdt,.insert-crdt,.delete-crdt,.replace-crdt,.get-crdt,.get-crdticonhide">
 		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
-		            	<span class="get-crdt crdtplusicon"><i class="fas fa-plus"></i></span>
-		            	<span class="get-crdt crdt hidden"><i class="fas fa-minus"></i></span> 
+		            	<span class="get-crdticonhide crdticonshow"><i class="fas fa-plus"></i></span>
+		            	<span class="get-crdt hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Get Data CRDT Parameters</span>
 		            </h3>
 	            </a>
 		        
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray get-crdt crdt hidden">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray get-crdt hidden">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -650,11 +646,15 @@
 			        </div>
 	            	<div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 		            	<pre>
-	<code>
-  CoCreate.getDataCrdt({
-  	collection: 'module_activities',
-  	document_id: '5e4802ce3ed96d38e71fc7e5',
-  	name: 'name'
+	<code> 
+  replaceDataCrdt({
+    collection: "module",
+    document_id: "",
+    name: "",
+    value: "",
+    delete-crdt_crud: true | false,
+    element: dom_object,
+    metadata: "xxxx"
   })
     </code>
 						</pre>
@@ -667,15 +667,15 @@
 				<p class="max-width:500px margin-bottom:20px">Send and receive cursor positions</p>
 
 			    
-		        <a href="#send-cursor" id="send-cursor" data-show=".send-cursor,.cursorplusicon" data-hide=".send-cursor,.cursors">
+		        <a href="#send-cursor" id="send-cursor" data-show=".send-cursor,.cursoriconshow" data-hide=".send-cursor,.send-cursoriconhide,.get-cursor">
 		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
-		            	<span class="send-cursor cursorplusicon hidden"><i class="fas fa-plus"></i></span>
-		            	<span class="send-cursor cursors"><i class="fas fa-minus"></i></span>
+		            	<span class="cursoriconshow send-cursoriconhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="send-cursor"><i class="fas fa-minus"></i></span>
 		            	<span> Send Cursor position Parameters</span>
 		            </h3>
 		        </a>
                 
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray send-cursor cursors">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray send-cursor">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -716,15 +716,15 @@
 					</div>
 				</div>	
 
-		        <a href="#get-cursor" id="get-cursor" data-show=".get-cursor,.cursorplusicon" data-hide=".get-cursor,.cursors">
+		        <a href="#get-cursor" id="get-cursor" data-show=".get-cursor,.cursoriconshow" data-hide=".send-cursor,.get-cursor,.get-cursoriconhide">
 		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
-		            	<span class="get-cursor cursorplusicon"><i class="fas fa-plus"></i></span>
-		            	<span class="get-cursor cursors hidden"><i class="fas fa-minus"></i></span> 
+		            	<span class="cursoriconshow get-cursoriconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="get-cursor hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Get Cursor position Parameters</span>
 		            </h3>
 		        </a>
 		    
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray get-cursor cursors hidden">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray get-cursor hidden">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -752,19 +752,19 @@
 
 			</div>
 			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px_0px">
-				<h1>Component register</h1>
+				<h1>Module register</h1>
 				<p class="max-width:500px margin-bottom:20px">Register your components save function to run with form Btn</p>
 
 			    
-		        <a href="#component-registry" id="component-registry" data-show=".component-registry" data-hide=".component-registry">
+		        <a href="#form-registry" id="form-registry" data-show=".form-registry,.cursoriconshow" data-hide=".form-registry,.form-registryiconhide">
 		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
-		            	<span class="component-registry hidden"><i class="fas fa-plus"></i></span>
-		            	<span class="component-registry"><i class="fas fa-minus"></i></span>
-		            	<span> Register Component Parameters</span>
+		            	<span class="cursoriconshow form-registryiconhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="form-registry"><i class="fas fa-minus"></i></span>
+		            	<span> Register form Parameters</span>
 		            </h3>
 		        </a>
                 
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray component-registry">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray form-registry">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -806,20 +806,20 @@
 				</div>	
 
 			</div>
-			<div data-collection="" data-document_id="" name="" id="websocket_objects" class="padding:35px_0px">
+			<div data-collection="" data-document_id="" name="" id="cursor_objects" class="padding:35px_0px">
 				<h1>WebSocket Objects</h1>
 				<p class="max-width:500px margin-bottom:20px">Send and listen to messages</p>
 
 			    
-		        <a href="#socket-create" id="socket-create" data-show=".socket-create,.socketplusicon" data-hide=".socket-create,.socket">
+		        <a href="#socket-create" id="socket-create" data-show=".socket-create,.socketiconshow" data-hide=".socket-create,.socket-createiconhide,.socket-send,.socket-listen">
 		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
-		            	<span class="socket-create socketplusicon hidden"><i class="fas fa-plus"></i></span>
-		            	<span class="socket-create socket"><i class="fas fa-minus"></i></span> 
+		            	<span class="socketiconshow socket-createiconhide hidden"><i class="fas fa-plus"></i></span>
+		            	<span class="socket-create"><i class="fas fa-minus"></i></span> 
 		            	<span>Create Socket Parameters</span>
 		            </h3>
 		        </a>
                 
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-create socket">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-create">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -864,15 +864,15 @@
 						</pre>
 					</div>
 				</div>	
-		        <a href="#socket-send" id="socket-send" data-show=".socket-send,.socketplusicon" data-hide=".socket-send,.socket">
+		        <a href="#socket-send" id="socket-send" data-show=".socket-send,.socketiconshow" data-hide=".socket-send,.socket-sendiconhide,.socket-listen">
 		            <h3 class="padding:15px_0px border-top border-bottom border-color:medium-gray">
-		            	<span class="socket-send socketplusicon"><i class="fas fa-plus"></i></span>
-		            	<span class="socket-send socket hidden"><i class="fas fa-minus"></i></span>
+		            	<span class="socketiconshow socket-sendiconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="socket-send hidden"><i class="fas fa-minus"></i></span>
 		            	<span> Send Message Parameters</span>
 		            </h3>
 		        </a>
                 
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-send socket hidden">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-send hidden">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
@@ -918,15 +918,15 @@
 					</div>
 				</div>	
 
-		        <a href="#socket-listen" id="socket-listen" data-show=".socket-listen,.socketplusicon" data-hide=".socket-listen,.socket">
+		        <a href="#socket-listen" id="socket-listen" data-show=".socket-listen,.socketiconshow" data-hide=".socket-send,.socket-listen,.socket-listeniconhide">
 		            <h3 class="padding:15px_0px border-bottom border-color:medium-gray">
-		            	<span class="socket-listen socketplusicon"><i class="fas fa-plus"></i></span>
-		            	<span class="socket-listen socket hidden"><i class="fas fa-minus"></i></span> 
+		            	<span class="socketiconshow socket-listeniconhide"><i class="fas fa-plus"></i></span>
+		            	<span class="socket-listen hidden"><i class="fas fa-minus"></i></span> 
 		            	<span>Listen Message Parameters</span>
 		            </h3>
 		        </a>
 		    
-				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-listen socket hidden">
+				<div class="display:flex flex-wrap:wrap border-bottom border-color:medium-gray socket-listen hidden">
 				    <div class="flex-grow:1 min-width:300px width:50% padding:0px_10px">
 			            <ul class="list-style-type:none padding-right:15px">
 							<li class="padding:15px_0px border-bottom border-color:medium-gray">
