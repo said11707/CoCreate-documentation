@@ -1,4 +1,72 @@
 RewriteEngine on
 #RewriteRule ^CoCreateCSS/(.*)$ /documentation/$1 [R=301,NC,L]
-Redirect 301 /documentation/flip-item.html /documentation/CoCreateCSS/flip-item.html
+############################### CoCreateCSS ##################################
 Redirect 301 /documentation/avatar.html /documentation/CoCreateCSS/avatar.html
+Redirect 301 /documentation/flip-item.html /documentation/CoCreateCSS/flip-item.html
+Redirect 301 /documentation/floating-labels.html /documentation/CoCreateCSS/floating-labels.html
+Redirect 301 /documentation/fullscreen.html /documentation/CoCreateCSS/fullscreen.html
+Redirect 301 /documentation/helper.html /documentation/CoCreateCSS/helper.html
+Redirect 301 /documentation/icon-transform.html /documentation/CoCreateCSS/icon-transform.html
+Redirect 301 /documentation/menu-icon.html /documentation/CoCreateCSS/menu-icon.html
+Redirect 301 /documentation/modal.html /documentation/CoCreateCSS/modal.html
+Redirect 301 /documentation/navbar.html /documentation/CoCreateCSS/navbar.html
+Redirect 301 /documentation/overlay-scroll.html /documentation/CoCreateCSS/overlay-scroll.html
+Redirect 301 /documentation/parallax.html /documentation/CoCreateCSS/parallax.html
+Redirect 301 /documentation/random-color.html /documentation/CoCreateCSS/random-color.html
+Redirect 301 /documentation/scroll.html /documentation/CoCreateCSS/scroll.html
+Redirect 301 /documentation/sidenav.html /documentation/CoCreateCSS/sidenav.html
+Redirect 301 /documentation/splitview.html /documentation/CoCreateCSS/splitview.html
+
+############################### CoCreate-modules ###############################
+
+Redirect 301 /documentation/adminUI.html /documentation/CoCreate-modules/adminUI.html
+Redirect 301 /documentation/checkout.html /documentation/CoCreate-modules/checkout.html
+Redirect 301 /documentation/dashboard.html /documentation/CoCreate-modules/dashboard.html
+Redirect 301 /documentation/datatable.html /documentation/CoCreate-modules/datatable.html
+Redirect 301 /documentation/email.html /documentation/CoCreate-modules/email.html
+Redirect 301 /documentation/kanban.html /documentation/CoCreate-modules/kanban.html
+Redirect 301 /documentation/sandbox.html /documentation/CoCreate-modules/sandbox.html
+Redirect 301 /documentation/select.html /documentation/CoCreate-modules/select.html
+
+############################### CoCreate-plugins ###############################
+
+Redirect 301 /documentation/calendar.html /documentation/CoCreate-plugins/calendar.html
+Redirect 301 /documentation/charts.html /documentation/CoCreate-plugins/charts.html
+Redirect 301 /documentation/dataTables.html /documentation/CoCreate-plugins/dataTables.html
+Redirect 301 /documentation/fullcalendar.html /documentation/CoCreate-plugins/fullcalendar.html
+Redirect 301 /documentation/grapesjs.html /documentation/CoCreate-plugins/grapesjs.html
+Redirect 301 /documentation/interact.html /documentation/CoCreate-plugins/interact.html
+Redirect 301 /documentation/isotope.html /documentation/CoCreate-plugins/isotope.html
+Redirect 301 /documentation/maps.html /documentation/CoCreate-plugins/maps.html
+Redirect 301 /documentation/progressbar.html /documentation/CoCreate-plugins/progressbar.html
+Redirect 301 /documentation/select2.html /documentation/CoCreate-plugins/select2.html
+Redirect 301 /documentation/sortable.html /documentation/CoCreate-plugins/sortable.html
+Redirect 301 /documentation/stripe.html /documentation/CoCreate-plugins/stripe.html
+
+############################### CoCreateJS ####################################
+
+Redirect 301 /documentation/action.html /documentation/CoCreateJS/action.html
+Redirect 301 /documentation/calculations.html /documentation/CoCreateJS/calculations.html
+Redirect 301 /documentation/clone.html /documentation/CoCreateJS/clone.html
+Redirect 301 /documentation/CoCreateJS-objects.html /documentation/CoCreateJS/CoCreateJS-objects.html
+Redirect 301 /documentation/conditional-logic.html /documentation/CoCreateJS/conditional-logic.html
+Redirect 301 /documentation/dnd.html /documentation/CoCreateJS/dnd.html
+Redirect 301 /documentation/image.html /documentation/CoCreateJS/image.html
+Redirect 301 /documentation/init.html /documentation/CoCreateJS/init.html
+Redirect 301 /documentation/CoCreateJS.html /documentation/CoCreateJS/CoCreateJS.html
+Redirect 301 /documentation/logic.html /documentation/logic/CoCreateJS.html
+Redirect 301 /documentation/progress.html /documentation/CoCreateJS/progress.html
+Redirect 301 /documentation/render.html /documentation/CoCreateJS/render.html
+Redirect 301 /documentation/social-share.html /documentation/CoCreateJS/social-share.html
+Redirect 301 /documentation/users.html /documentation/CoCreateJS/users.html
+Redirect 301 /documentation/vdom.html /documentation/CoCreateJS/vdom.html
+
+######################### getting.started ####################################
+
+Redirect 301 /documentation/introduction.html /documentation/getting.started/introduction.html
+
+######################### templates ####################################
+
+Redirect 301 /documentation/sandbox-top.html /documentation/templates/sandbox-top.html
+Redirect 301 /documentation/sticky-sandbox.html /documentation/templates/sticky-sandbox.html
+Redirect 301 /documentation/sticky-table.html /documentation/templates/sticky-table.html
