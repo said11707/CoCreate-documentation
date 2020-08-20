@@ -69,7 +69,7 @@
         data-order_type="asc"
         data-template_id="menu">
           
-        <!-- Menu Item -->
+        <!-- Menu Item Template-->
         <div class="template">
       		<li class="font-size:20px collapsed">
       		  <a class="padding-left:15px width:100%" data-toggle="collapsed" data-toggle_closest="li">
@@ -77,9 +77,9 @@
       		    <span class="float:right"><i class="fas fa-chevron-down cocreatejs"></i><i class="fas fa-chevron-up cocreatejs hidden"></i></span>
       		  </a>
       		</li>
-        			
-      		<div
-            data-fetch_collection="module_activity"
+          
+          <!-- SubMenu-->
+      		<div data-fetch_collection="module_activity"
             data-pass_to="sub-menu-item"
             data-pass_id="sub-menu"
             data-fetch_name="stage" 
@@ -88,10 +88,10 @@
             data-order_by="menu-position"
             data-order_type="asc">
   
-              <!-- Sub Menu -->
+            <!-- SubMenu Item Template-->
       			<li class="templat menuItem padding-left:20px">
       			  <a href="./CoCreateJS">
-      			    <span>Realtime HTML Elements</span>
+      			    <span name="">Realtime HTML Elements</span>
       			  </a>
       			</li>
           </div>
